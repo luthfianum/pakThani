@@ -34,7 +34,13 @@ class Transactions extends Migration
                 'type' => 'INT'
             ],
             'created_at' => [
-                'type' => 'DATETIME',
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME'
             ]
         ]);
         

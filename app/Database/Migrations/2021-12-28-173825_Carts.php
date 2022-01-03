@@ -23,6 +23,15 @@ class Carts extends Migration
                 'null' => true,
                 'default' => true,
             ],
+            'created_at' => [
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME'
+            ]
         ]);
         
         $this->forge->addKey('id', true);

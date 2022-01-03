@@ -35,6 +35,15 @@ class Addresses extends Migration
                 'constraint' => 255,
                 'null' => true
             ],
+            'created_at' => [
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME'
+            ]
         ]);
         
         $this->forge->addKey('id', true);
