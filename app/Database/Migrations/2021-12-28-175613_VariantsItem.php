@@ -21,14 +21,19 @@ class VariantsItem extends Migration
             'price' => [
                 'type' => 'INT'
             ],
-            'slug' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
             'item_id' => [
                 'type' => 'INT',
                 'unasigned' => true,
             ],
+            'created_at' => [
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME'
+            ]
         ]);
 
         $this->forge->addKey('id', true);

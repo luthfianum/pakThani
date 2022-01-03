@@ -1,22 +1,20 @@
-<?php 
+<?php
 
 namespace App\Models;
+
 use CodeIgniter\Model;
 
-class UserModel extends Model {
+class VariantsItemModel extends Model
+{
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
+    protected $table            = 'variants_items';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        'username',
-        'email',
-        'password',
-    ];
+    protected $allowedFields    = [];
 
     // Dates
     protected $useTimestamps = true;
@@ -42,5 +40,3 @@ class UserModel extends Model {
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 }
-
-?>

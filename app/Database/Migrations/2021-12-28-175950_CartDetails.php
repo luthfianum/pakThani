@@ -30,6 +30,15 @@ class CartDetails extends Migration
                 'type' => 'INT',
                 'unasigned' => true,
             ],
+            'created_at' => [
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME'
+            ]
         ]);
 
         $this->forge->addKey('id', true);

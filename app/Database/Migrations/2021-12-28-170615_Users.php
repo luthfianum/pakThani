@@ -39,6 +39,15 @@ class Users extends Migration
                 'type' => 'BOOLEAN',
                 'default' => false
             ],
+            'created_at' => [
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME'
+            ]
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('users');
