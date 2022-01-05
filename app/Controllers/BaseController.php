@@ -48,5 +48,16 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        // Untuk akses menggunakan model
+        $this->AddressesModel           = new \App\Models\AddressesModel();
+        $this->CartDetailsModel         = new \App\Models\CartDetailsModel();
+        $this->CartsModel               = new \App\Models\CartsModel();
+        $this->CategoriesModel          = new \App\Models\CategoriesModel();
+        $this->ItemsModel               = new \App\Models\ItemsModel();
+        $this->SlidesModel              = new \App\Models\SlidesModel();
+        $this->TransactionsModel        = new \App\Models\TransactionsModel();
+        $this->TransactionStatusModel   = new \App\Models\TransactionStatusModel();
+        $this->UserModel                = new \App\Models\UserModel();
+        $this->VariantsItemModel        = new \App\Models\VariantsItemModel();
     }
 }
