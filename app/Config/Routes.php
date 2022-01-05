@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 
 //GET WOI
 $routes->get('/', 'Home::index');
+$routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/login', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->get('/logout', '');
