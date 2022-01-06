@@ -38,7 +38,8 @@ $routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/login', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->get('/logout', '');
-$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
+$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);     
+$routes->get('/item/(:any)', 'DetailitemController::index/$1');
 
 //INI POST YAAA!
 $routes->post('/login', 'SigninController::loginAuth');

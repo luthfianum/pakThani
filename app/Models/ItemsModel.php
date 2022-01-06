@@ -66,4 +66,16 @@ class ItemsModel extends Model
 
     return $items;
   }
+
+  public function getItem(string $slug)
+  {
+    $item = $this->db
+    -> table('items')
+    -> select('*')
+    -> where('slug', $slug)
+    ->get()
+    ->getResult('array');
+
+    return $item;
+  }
 }
