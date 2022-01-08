@@ -12,6 +12,7 @@ class Main extends Seeder
         $this->call('CategoriesSeeder');
         $this->call('ItemsSeeder');
         $this->call('CartsSeeder');
+        $this->call('VariantsSeeder');
         $this->call('CartDetailsSeeder');
     }
 }
