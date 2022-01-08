@@ -14,7 +14,8 @@
 <?= $this->section('content'); ?>
 
 <body>
-    <?= dd($this->data) ?>
+
 </body>
+<?= $this->endSection(); ?>
 
 </html>

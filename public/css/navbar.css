@@ -5,6 +5,9 @@
   background-color: #fcfcfd;
 }
 
+header {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
 li,
 a,
 button {
@@ -16,6 +19,12 @@ button {
 }
 
 header {
+  position: absolute;
+  width: 100%;
+  height: 125px;
+  left: 0px;
+  top: 0px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,7 +93,7 @@ button:hover {
 }
 
 .search__input {
-  width: 180%;
+  width: 589px;
   padding: 12px 24px;
 
   background-color: transparent;
@@ -115,11 +124,25 @@ button:hover {
 
 .search__input:hover,
 .search__input:focus {
-  width: 180%;
+  width: 589px;
   padding: 12px 0;
   outline: 0;
   border: 1px solid transparent;
   border-bottom: 1px solid #575756;
   border-radius: 0;
   background-position: 100% center;
+}
+
+.tulisanLogo {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
 }
