@@ -9,6 +9,10 @@
     <title>Home</title>
 </head>
 
+<?= $this->extend('template/navbarLogin'); ?>
+
+<?= $this->section('content'); ?>
+
 <body>
     <?= dd($this->data) ?>
 </body>

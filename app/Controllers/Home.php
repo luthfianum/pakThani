@@ -21,6 +21,6 @@ class Home extends BaseController
       $result['user']['cart'] = $this->CartsModel->getByUserId($session->get('id'));
     }
 
-    return view('home', $result);
+    echo view('Home', $result);
   }
 }
