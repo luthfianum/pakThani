@@ -17,7 +17,21 @@ button {
   color: #000000;
   text-decoration: none;
 }
+.div1 {
+  position: absolute;
+  width: 69px;
+  height: 26px;
+  left: 336px;
+  top: 52px;
 
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #000000;
+}
 header {
   position: absolute;
   width: 100%;
@@ -69,12 +83,18 @@ header {
 }
 
 button {
-  padding: 9px 25px;
-  background-color: #f7d100;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease Os;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 69px;
+
+  float: right;
+  width: 189px;
+  height: 44px;
+  left: 1175px;
+  top: 40px;
+  float: right;
 }
 
 button:hover {
@@ -95,6 +115,10 @@ button:hover {
 .search__input {
   width: 589px;
   padding: 12px 24px;
+  float: inline-end;
+  height: 40px;
+  left: 446px;
+  top: 42px;
 
   background-color: transparent;
   transition: transform 250ms ease-in-out;
@@ -134,15 +158,9 @@ button:hover {
 }
 
 .tulisanLogo {
-  margin: 0;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 49px;
+  width: 220px;
+  height: 65px;
+  left: 75px;
+  top: 30px;
 }
