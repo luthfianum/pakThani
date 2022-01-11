@@ -16,7 +16,30 @@
 <body>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    carousel atas
+    carousel
+    <div class="carousel" style="display:flex">
+        <div class="owl-carousel owl-theme" style="width:66.66%">
+            <div class="item">
+                <img src="https://i.ibb.co/fSzsptW/baby-jagung.png" alt="" style="width: 100%;max-height: 300px">
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/k29tZGx/ubi-cilembu.png" alt="" style="width: 100%; max-height: 300px">
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/P4by44B/telur-puyuh.png" alt="" style="width: 100%; max-height: 300px">
+            </div>
+        </div>
+        <div class="kategori" style="width: 33.33%; display:flex; flex-wrap:wrap">
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:blue">1</div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:green">2</div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:yello">3</div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:red">4</div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:cyan">5</div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:pink">6</div>
+        </div>
+    </div>
+
+
     <div class="greeting">
         <h2>Hai, <span>Mahran</span>! Mau belanja apa hari ini?</h2>
     </div>
@@ -79,6 +102,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 
     <div class="cards">
@@ -197,7 +223,15 @@
             </div>
         </div>
     </div>
-
+    <script>
+        $('.owl-carousel').owlCarousel({
+            center: true,
+            loop: true,
+            items: 1,
+            number: 1,
+            margin: 20
+        })
+    </script>
 
 </body>
 

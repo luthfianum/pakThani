@@ -67,3 +67,25 @@
 .card__link:hover {
   text-decoration: underline;
 }
+
+body {
+  margin: 0;
+}
+.upperPart {
+  display: flex;
+}
+
+.kategori {
+  margin: 5px;
+  padding: 5px;
+  float: right;
+  position: relative;
+}
+
+.logoAtas {
+  margin: 5px;
+}
+.carousel {
+  margin: 10px;
+  width: 90%;
+}

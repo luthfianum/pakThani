@@ -1,6 +1,5 @@
 header {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
   background-color: #fcfcfd;
 
@@ -12,9 +11,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 30px 5%;
 }
-
+body {
+  margin: 10px;
+}
 header {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 }
@@ -102,6 +103,7 @@ button {
 
 button:hover {
   background-color: rgba(0, 136, 169, 0.5);
+  cursor: pointer;
 }
 
 .search__container {
@@ -119,7 +121,7 @@ button:hover {
   width: 589px;
   padding: 12px 24px;
   float: inline-end;
-  height: 40px;
+  height: 30px;
   left: 446px;
   top: 42px;
 
