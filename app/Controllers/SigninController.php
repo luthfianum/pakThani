@@ -7,7 +7,7 @@ use App\Models\UserModel;
 class SigninController extends Controller {
     public function index() {
         helper(['form']);
-        echo view('login');
+        echo view('loginAlternate');
     }
 
     public function loginAuth() {
@@ -44,5 +44,3 @@ class SigninController extends Controller {
         }
     }
 }
-
-?>
