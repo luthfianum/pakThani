@@ -59,4 +59,16 @@ class CartsModel extends Model
       ->getResult('array');
     return $cart;
   }
+
+  public function getIdCartActiveByUserId($user_id) {
+    $cart = $this->db
+      ->table('carts')
+      ->select('id')
+      ->where(['user_id' => $user_id, 'is_active' => true])
+      ->get()
+      ->getResult('array')[0];
+
+    return $cart;
+  }
+  
 }
