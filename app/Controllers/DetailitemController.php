@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controllers;
-use CodeIgniter\Controller;
 
 class DetailitemController extends BaseController {
     public function index($slug) {

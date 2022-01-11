@@ -49,7 +49,9 @@ class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
         // Untuk akses menggunakan model
+        $this->request                  = \Config\Services::request();
         $this->db                       = \Config\Database::connect();
+        
         $this->AddressesModel           = new \App\Models\AddressesModel();
         $this->CartDetailsModel         = new \App\Models\CartDetailsModel();
         $this->CartsModel               = new \App\Models\CartsModel();

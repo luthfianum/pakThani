@@ -39,4 +39,16 @@ class CartDetailsModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function addItemToCart($cartID, $quantity, $variantID) {
+        $data = [
+            'cart_id' => $cartID,
+            'quantity'  => $quantity,
+            'variant_id'  => $variantID,
+        ];
+        
+        $this->db
+            ->table("cart_details")
+            ->insert($data);
+    }
 }
