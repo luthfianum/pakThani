@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/css/home.css">
     <title>Home</title>
 </head>
-
+<?php
+$data = $this->data;
+$item = $data['items'];
+$random = $item['random'];
+?>
 
 
 <?= $this->section('content'); ?>
@@ -30,12 +34,46 @@
             </div>
         </div>
         <div class="kategori" style="width: 33.33%; display:flex; flex-wrap:wrap">
-            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:blue">1</div>
-            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:green">2</div>
-            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:yello">3</div>
-            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:red">4</div>
-            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:cyan">5</div>
-            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; background-color:pink">6</div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px;align-items:center ">
+                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                    <img src="https://i.ibb.co/D7jgSKx/icon-Thanksgiving.png" alt="" style="width: 50%; ">
+                    Daging
+                </a>
+            </div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px;">
+                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                    <img src="https://i.ibb.co/4R4w5K5/icon-Group-Of-Fruits.png" alt="" style="width: 50%;">
+                    Buah
+                </a>
+            </div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; ">
+                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                    <img src="https://i.ibb.co/88xHxQB/icon-Garlic.png" alt="" style="width: 50%;">
+                    Rempah
+                </a>
+
+            </div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; ">
+                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                    <img src="https://i.ibb.co/23BGj1r/icon-Group-Of-Vegetables.png" alt="" style="width: 50%;">
+                    Sayuran
+                </a>
+
+            </div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; ">
+                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                    <img src="https://i.ibb.co/88xHxQB/icon-Garlic.png" alt="" style="width: 50%;">
+                    Organik
+                </a>
+
+            </div>
+            <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px; ">
+                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                    <img src="https://i.ibb.co/88xHxQB/icon-Garlic.png" alt="" style="width: 50%;">
+                    Terlaris
+                </a>
+
+            </div>
         </div>
     </div>
 
@@ -47,64 +85,23 @@
         <div class="greeting">
             <h2>Hai, <span>Mahran</span>! Mau belanja apa hari ini?</h2>
         </div>
-        <div class="recommendedText">
+        <div class="recommendedText" style="display: flex; justify-content:space-between; padding-right:6rem; align-items:center">
             <h3>Today Recommended</h3>
+            <a href="">Lihat Semua</a>
         </div>
-        <div class="cards">
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
+        <div class="cards" style="display: flex; justify-content:space-around">
+            <?php foreach ($random as $item) : ?>
 
-                </div>
-                <div class="card__info">
+                <div class="card">
+                    <img class="card__image" src="<?= $item['image']; ?>" alt="">
+                    <div class="card__content">
+                        <?= $item['description']; ?>
+                    </div>
+                    <div class="card__info">
 
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
@@ -113,64 +110,23 @@
 
 
     <div class="anekaDaging">
-        <div class="anekaDagingText">
-            <h3>Anek Daging</h3>
+        <div class="anekaDagingText" style="display: flex; justify-content:space-between; padding-right:6rem; align-items:center">
+            <h3>Aneka Daging</h3>
+            <a href="">Lihat Semua</a>
         </div>
-        <div class="cards">
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
+        <div class="cards" style="display: flex; justify-content:space-around">
+            <?php for ($x = 0; $x < 6; $x++) : ?>
 
-                </div>
-                <div class="card__info">
+                <div class="card">
+                    <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                    <div class="card__content">
 
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-                <div class="card__content">
+                    </div>
+                    <div class="card__info">
 
+                    </div>
                 </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
+            <?php endfor; ?>
         </div>
     </div>
 
@@ -201,61 +157,25 @@
 
 
     <div class="anekaBuah">
-        <div class="cards">
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
+        <div class="anekaBuahText" style="display: flex; justify-content:space-between; padding-right:6rem; align-items:center">
+            <h3>Aneka Buah</h3>
+            <a href="">Lihat Semua</a>
+        </div>
+        <div class="cards " style="display: flex; justify-content:space-around">
 
-                </div>
-                <div class="card__info">
+            <?php for ($x = 0; $x < 6; $x++) : ?>
 
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-                <div class="card__content">
+                <div class="card">
+                    <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                    <div class="card__content">
 
-                </div>
-                <div class="card__info">
+                    </div>
+                    <div class="card__info">
 
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
-                <div class="card__content">
+            <?php endfor; ?>
 
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-                <div class="card__content">
-
-                </div>
-                <div class="card__info">
-
-                </div>
-            </div>
         </div>
     </div>
 
@@ -263,12 +183,13 @@
     <script>
         $('.owl-carousel').owlCarousel({
             center: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: false,
             loop: true,
             items: 1,
             number: 1,
             margin: 15
-
-
         })
     </script>
 

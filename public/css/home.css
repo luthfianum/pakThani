@@ -16,7 +16,7 @@
 }
 
 .card__image {
-  width: 100%;
+  width: 200px;
   height: 150px;
   object-fit: cover;
   display: block;
@@ -98,7 +98,9 @@ body {
 .recommendedText {
   padding-left: 5%;
 }
-
+.anekaBuahText {
+  padding-left: 5%;
+}
 .anekaDagingText {
   padding-left: 5%;
 }
