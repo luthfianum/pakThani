@@ -44,6 +44,7 @@ $routes->get('/item/(:any)', 'DetailitemController::index/$1');
 //INI POST YAAA!
 $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
+$routes->post('/cart', 'CartController::index/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Codeigniter Login with Email/Password Example</title>
+    <title>Cart Test</title>
   </head>
   <body>
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-5">
                 
-                <h2>Login in</h2>
+                <h2>UJI COBA</h2>
                 
                 <?php if(session()->getFlashdata('msg')):?>
                     <div class="alert alert-warning">
@@ -20,17 +20,17 @@
                     </div>
                 <?php endif;?>
 
-                <form action="<?php echo base_url(); ?>/login" method="post">
+                <form action="<?php echo base_url(); ?>/cart" method="post">
                     <div class="form-group mb-3">
-                        <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
+                        <input type="text" name="quantity" placeholder="quantity" class="form-control" >
                     </div>
 
                     <div class="form-group mb-3">
-                        <input type="password" name="password" placeholder="Password" class="form-control" >
+                        <input type="text" name="variantID" placeholder="variantID" class="form-control" >
                     </div>
                     
                     <div class="d-grid">
-                         <button type="submit" class="btn btn-success">Signin</button>
+                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>     
                 </form>
             </div>

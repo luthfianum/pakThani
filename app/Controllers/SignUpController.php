@@ -1,17 +1,21 @@
 <?php
 
 namespace App\Controllers;
+
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 
-class SignUpController extends Controller {
-    public function index() {
+class SignUpController extends Controller
+{
+    public function index()
+    {
         helper(['form']);
         $data = [];
-        echo view('signup', $data);
+        echo view('register', $data);
     }
 
-    public function store() {
+    public function store()
+    {
         helper(['form']);
         $rules = [
             'username'        => 'required|min_length[2]|max_length[50]',
@@ -20,7 +24,7 @@ class SignUpController extends Controller {
             'confirmpassword' => 'matches[password]'
         ];
 
-        if($this->validate($rules)) {
+        if ($this->validate($rules)) {
             $userModel = new UserModel();
             $data = [
                 'username' => $this->request->getVar('username'),
@@ -32,9 +36,7 @@ class SignUpController extends Controller {
             return redirect()->to('/login');
         } else {
             $data['validation'] = $this->validator;
-            echo view('signup', $data);
+            echo view('register', $data);
         }
     }
 }
-
-?>
