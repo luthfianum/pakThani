@@ -20,7 +20,7 @@
         <div style="margin: 0 auto; padding: 10% 0; width: 365px;">
             <div class="flex" style="flex-direction: row; justify-content: space-between; align-items: center;">
                 <p style="text-align: left;">Daftar</p>
-                <a href=""><i class="fas fa-times"></i></a>
+                <a href="<?php echo base_url(); ?>"><i class="fas fa-times"></i></a>
             </div>
 
             <div id="form-signup">

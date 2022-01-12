@@ -21,7 +21,7 @@ $random = $item['random'];
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <div class="carousel" style="display:flex">
+    <div class="carousel" style="display:flex;">
         <div class="owl-carousel owl-theme" style="width:55%">
             <div class="item">
                 <img src="https://i.ibb.co/3RdkjFg/Animated-Carousel-2.png" alt="" style="width: 100%;max-height: 300px">
@@ -33,7 +33,7 @@ $random = $item['random'];
                 <img src="https://i.ibb.co/P4by44B/telur-puyuh.png" alt="" style="width: 100%; max-height: 300px">
             </div>
         </div>
-        <div class="kategori" style="width: 33.33%; display:flex; flex-wrap:wrap">
+        <div class="kategori" style="width: 33.33%; display:flex; flex-wrap:wrap; align-items:center">
             <div class="logoAtas" style="width: 30%; text-align:center; padding-top:30px;align-items:center ">
                 <a href="" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/D7jgSKx/icon-Thanksgiving.png" alt="" style="width: 50%; ">

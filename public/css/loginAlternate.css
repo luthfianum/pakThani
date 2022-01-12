@@ -91,6 +91,7 @@ input[type="password"] {
   border-radius: 10px;
   margin: 16px 0;
   padding: 10px;
+  cursor: pointer;
 
   font-family: Nunito;
   font-style: normal;
@@ -105,6 +106,7 @@ input[type="password"] {
   background: #ffffff;
   margin: 16px 0;
   padding: 10px;
+  cursor: pointer;
 
   font-family: Nunito;
   font-style: normal;
@@ -119,6 +121,7 @@ input[type="password"] {
   border-radius: 10px;
   margin: 16px 0;
   padding: 10px;
+  cursor: pointer;
 
   font-family: Nunito;
   font-style: normal;
@@ -133,6 +136,7 @@ input[type="password"] {
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
+  cursor: pointer;
 
   font-family: Nunito;
   font-style: normal;
