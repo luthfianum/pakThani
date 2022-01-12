@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
-<?= $this->extend('template/navbarLogin'); ?>
+<?php if (isset($this->data['user'])) {
+    $this->extend('template/navbarAfterLogin');
+} else {
+    $this->extend('template/navbarLogin');
+}
+?>
 
 <head>
     <meta charset="utf-8">
@@ -97,9 +102,12 @@ $random = $item['random'];
                     <div class="card__content">
                         <?= $item['description']; ?>
                     </div>
-                    <div class="card__info">
-
+                    <div class="beliContainer">
+                        <button class="beliButton" onClick="updateData()">
+                            beli
+                        </button>
                     </div>
+
                 </div>
             <?php endforeach; ?>
         </div>
@@ -122,8 +130,10 @@ $random = $item['random'];
                     <div class="card__content">
 
                     </div>
-                    <div class="card__info">
-
+                    <div class="beliContainer">
+                        <button class="beliButton" onClick="updateData()">
+                            beli
+                        </button>
                     </div>
                 </div>
             <?php endfor; ?>
@@ -170,8 +180,10 @@ $random = $item['random'];
                     <div class="card__content">
 
                     </div>
-                    <div class="card__info">
-
+                    <div class="beliContainer">
+                        <button class="beliButton" onClick="updateData()">
+                            beli
+                        </button>
                     </div>
                 </div>
             <?php endfor; ?>

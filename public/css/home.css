@@ -1,6 +1,6 @@
 .cards {
   margin: auto auto;
-  max-width: 150px;
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   grid-auto-rows: auto;
@@ -8,11 +8,21 @@
   font-family: sans-serif;
   padding-top: 10px;
   border-radius: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
+* {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+}
 .cards * {
   box-sizing: border-box;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  max-width: 200px;
+
+  max-height: 328px;
 }
 
 .card__image {
@@ -20,14 +30,16 @@
   height: 150px;
   object-fit: cover;
   display: block;
-  border-radius: 10px 10px 0 0;
 }
-
+.card {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
 .card__content {
   line-height: 1.5;
   font-size: 0.9em;
   padding: 15px;
   background: #fafafa;
+  height: 100px;
 }
 
 .card__content > p:first-of-type {
@@ -72,8 +84,6 @@ body {
 }
 
 .kategori {
-  margin: 5px;
-  padding: 5px;
   float: right;
   position: relative;
 }
@@ -87,8 +97,9 @@ body {
   width: 90%;
   height: 294px;
   padding-left: 10%;
-
+  padding-right: 10%;
   column-gap: 25px;
+  text-align: center;
 }
 
 .greeting {
@@ -129,4 +140,20 @@ body {
   border-radius: 10px;
   overflow: hidden;
   width: 50%;
+}
+
+.beliButton {
+  display: block;
+  border-radius: 10px;
+}
+
+.beliContainer {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+.beliButton:hover {
+  background-color: #f7d100;
 }
