@@ -24,7 +24,7 @@
             </li>
         </ul>
     </nav>
-    <a class="cta" href="#"><button>Login</button></a>
+    <a class="cta" href="<?php echo site_url('/SigninController/index') ?>"><button>Login</button></a>
 
 </header>
 

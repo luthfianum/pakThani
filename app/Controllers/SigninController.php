@@ -44,5 +44,3 @@ class SigninController extends Controller {
         }
     }
 }
-
-?>

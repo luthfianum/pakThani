@@ -16,9 +16,9 @@
 <body>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    carousel
+
     <div class="carousel" style="display:flex">
-        <div class="owl-carousel owl-theme" style="width:66.66%">
+        <div class="owl-carousel owl-theme" style="width:55%">
             <div class="item">
                 <img src="https://i.ibb.co/fSzsptW/baby-jagung.png" alt="" style="width: 100%;max-height: 300px">
             </div>
@@ -40,196 +40,235 @@
     </div>
 
 
-    <div class="greeting">
-        <h2>Hai, <span>Mahran</span>! Mau belanja apa hari ini?</h2>
-    </div>
-    <div class="recommendedText">
-        <h3>Today Recommended</h3>
-    </div>
-    <div class="cards">
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
 
-            </div>
-            <div class="card__info">
 
-            </div>
+
+    <div class="recommendedCard">
+        <div class="greeting">
+            <h2>Hai, <span>Mahran</span>! Mau belanja apa hari ini?</h2>
         </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
-            </div>
+        <div class="recommendedText">
+            <h3>Today Recommended</h3>
         </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
-            <div class="card__content">
+        <div class="cards">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-            <div class="card__info">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-            <div class="card__content">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-            <div class="card__info">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-            <div class="card__info">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
 
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
+                </div>
+                <div class="card__info">
 
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div class="cards">
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
+                </div>
             </div>
         </div>
     </div>
 
 
-    carousel bawah
 
-    <div class="cards">
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
 
-            </div>
-            <div class="card__info">
 
-            </div>
+    <div class="anekaDaging">
+        <div class="anekaDagingText">
+            <h3>Anek Daging</h3>
         </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-            <div class="card__content">
+        <div class="cards">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-            <div class="card__info">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
-            <div class="card__content">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-            <div class="card__info">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
-            <div class="card__content">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
 
+                </div>
+                <div class="card__info">
+
+                </div>
             </div>
-            <div class="card__info">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
 
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
+                </div>
+                <div class="card__info">
 
-            </div>
-            <div class="card__info">
-
-            </div>
-        </div>
-        <div class="card">
-            <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-            <div class="card__content">
-
-            </div>
-            <div class="card__info">
-
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="carousel" style="display:flex; padding-top:20px; padding-right:5px">
+        <div class="owl-carousel owl-theme" style="width:43.75%">
+            <div class="item">
+                <img src="https://i.ibb.co/fSzsptW/baby-jagung.png" alt="" style="width: 100%;max-height: 300px">
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/k29tZGx/ubi-cilembu.png" alt="" style="width: 100%; max-height: 300px">
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/P4by44B/telur-puyuh.png" alt="" style="width: 100%; max-height: 300px">
+            </div>
+        </div>
+        <div class="owl-carousel owl-theme" style="width:43.75%">
+            <div class="item">
+                <img src="https://i.ibb.co/fSzsptW/baby-jagung.png" alt="" style="width: 100%;max-height: 300px">
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/k29tZGx/ubi-cilembu.png" alt="" style="width: 100%; max-height: 300px">
+            </div>
+            <div class="item">
+                <img src="https://i.ibb.co/P4by44B/telur-puyuh.png" alt="" style="width: 100%; max-height: 300px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="anekaBuah">
+        <div class="cards">
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
+
+                </div>
+                <div class="card__info">
+
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+                <div class="card__content">
+
+                </div>
+                <div class="card__info">
+
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
+                <div class="card__content">
+
+                </div>
+                <div class="card__info">
+
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+                <div class="card__content">
+
+                </div>
+                <div class="card__info">
+
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
+
+                </div>
+                <div class="card__info">
+
+                </div>
+            </div>
+            <div class="card">
+                <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+                <div class="card__content">
+
+                </div>
+                <div class="card__info">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         $('.owl-carousel').owlCarousel({
             center: true,
             loop: true,
             items: 1,
             number: 1,
-            margin: 20
+            margin: 15
+
+
         })
     </script>
 
