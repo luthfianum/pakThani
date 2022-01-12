@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .cards {
   margin: auto auto;
 
@@ -20,7 +22,7 @@
 .cards * {
   box-sizing: border-box;
   border-radius: 10px;
-  max-width: 200px;
+  width: 200px;
 
   max-height: 328px;
 }
@@ -105,15 +107,58 @@ body {
 .greeting {
   padding-left: 5%;
 }
+.greeting h2, .greeting span {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.card__content {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24.55px;
+}
+
+#price {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24.55px;
+}
+#variant {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19.1px;
+}
+
 
 .recommendedText {
   padding-left: 5%;
 }
+
+.recommendedText a {
+  color: #4CB654;
+}
 .anekaBuahText {
   padding-left: 5%;
 }
+
+.anekaBuahText a {
+  color: #4CB654;
+} 
 .anekaDagingText {
   padding-left: 5%;
+}
+
+.anekaDagingText a {
+  color: #4CB654;
 }
 
 .recommendedCard {
@@ -121,14 +166,45 @@ body {
   padding-right: 5%;
 }
 
+.recommendedCard h3 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+}
+
+
 .anekaDaging {
   padding-left: 5%;
   padding-right: 5%;
 }
 
+.anekaDaging h3 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+}
+
 .anekaBuah {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.anekaBuah h3 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
 }
 
 .carouselBawah {
