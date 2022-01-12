@@ -20,7 +20,7 @@
     <div class="carousel" style="display:flex">
         <div class="owl-carousel owl-theme" style="width:55%">
             <div class="item">
-                <img src="https://i.ibb.co/fSzsptW/baby-jagung.png" alt="" style="width: 100%;max-height: 300px">
+                <img src="https://i.ibb.co/3RdkjFg/Animated-Carousel-2.png" alt="" style="width: 100%;max-height: 300px">
             </div>
             <div class="item">
                 <img src="https://i.ibb.co/k29tZGx/ubi-cilembu.png" alt="" style="width: 100%; max-height: 300px">
