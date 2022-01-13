@@ -39,4 +39,14 @@ class AddressesModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getByUserId($userId)
+    {
+        $cart = $this->db
+            ->table('addresses')
+            ->select('')
+            ->where('user_id', $userId)
+            ->get()
+            ->getResult('array');
+    }
 }

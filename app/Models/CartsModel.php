@@ -42,6 +42,7 @@ class CartsModel extends Model
 
   public function getByUserId(int $user_id)
   {
+    $cart_total = 0; 
     $cart = $this->db
       ->table('carts')
       ->select('id,user_id,is_active')
@@ -57,6 +58,11 @@ class CartsModel extends Model
       ->join('items', 'variants_item.item_id = items.id')
       ->get()
       ->getResult('array');
+    
+    foreach ($cart["cartDetails"] as $details) {
+      $cart_total += $details['price'] * $details['quantity'];
+    }
+    $cart['total'] = $cart_total;
     return $cart;
   }
 

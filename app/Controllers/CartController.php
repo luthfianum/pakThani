@@ -18,7 +18,7 @@ class CartController extends BaseController {
             # $session->setFlashdata('msg', 'Pemesanan Berhasil');
             
             # ke home dlu, nanti klo udh jdi pageny perlu dirombak lagi
-            return redirect()->to('/home'); 
+            return redirect()->to('/'); 
         } else {
             return redirect()->to('/login'); 
         }
