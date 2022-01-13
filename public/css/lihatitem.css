@@ -3,13 +3,13 @@
   margin: auto;
 }
 
-a {
+.back a {
   text-decoration: none;
   color: black;
   margin: 50px auto;
 }
 
-a img {
+.back a img {
   float: left;
   height: 35px;
 }
@@ -83,13 +83,18 @@ input {
 .beli input {
   padding: 5px 5px;
   border: 1px solid gray;
-  border-radius: 12px;
-  margin: 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.option label {
+  min-width: 200px;
+  margin: 1px;
 }
 
 .beli input {
   width: 200px;
-  margin: 10px;
+  margin: 20px 5px;
   background-color: rgb(247, 209, 0);
   border-style: none;
   border: none;
@@ -99,10 +104,19 @@ input {
   display: none;
 }
 
-.plusminus button {
-  border: none;
-  border-radius: 50%;
-  margin: 10px auto;
+.plusminus a {
+  text-decoration: none;
+}
+
+.plusminus {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.plusminus a img {
+  width: 25px;
+  margin: 5px;
 }
 
 .cf:before,
