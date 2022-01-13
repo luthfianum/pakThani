@@ -40,9 +40,7 @@ $buah = $item['buah'];
             <div class="item">
                 <img src="https://i.ibb.co/Jyx1QdV/Property-1-Frame-3.png" alt="" style="width: 100%; max-height: 300px">
             </div>
-            <div class="item">
-                <img src="hhttps://i.ibb.co/3hQ1Tb8/Property-1-Frame-4.png" alt="" style="width: 100%; max-height: 300px">
-            </div>
+
         </div>
         <div class="kategori" style="width: 33.33%; display:flex; flex-wrap:wrap; align-items:space-between">
             <div class="logoAtas" style="width: 30%; text-align:center;align-items:center ">
@@ -110,9 +108,9 @@ $buah = $item['buah'];
                         <p><span id="price">Rp <?= $item['variants_item'][0]['price']; ?></span><span id="variant">/<?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <button class="beliButton" onClick="updateData()">
+                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
                             beli
-                        </button>
+                        </a>
                     </div>
 
                 </div>
@@ -138,9 +136,9 @@ $buah = $item['buah'];
                         <p>Rp <span id="price"><?= $item['variants_item'][0]['price']; ?></span> / <span id="variant"><?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <button class="beliButton" onClick="updateData()">
+                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
                             beli
-                        </button>
+                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -158,9 +156,6 @@ $buah = $item['buah'];
             <div class="item">
                 <img src="https://i.ibb.co/FK9DGjL/Property-1-Frame-1.png" alt="" style="width: 100%;max-height: 300px">
             </div>
-            <div class="item">
-                <img src="hhttps://i.ibb.co/3hQ1Tb8/Property-1-Frame-4.png" alt="" style="width: 100%; max-height: 300px">
-            </div>
         </div>
         <div class="owl-carousel owl-theme" style="width:43.75%">
             <div class="item">
@@ -170,11 +165,9 @@ $buah = $item['buah'];
                 <img src="https://i.ibb.co/Jyx1QdV/Property-1-Frame-3.png" alt="" style="width: 100%; max-height: 300px">
             </div>
             <div class="item">
-                <img src="hhttps://i.ibb.co/3hQ1Tb8/Property-1-Frame-4.png" alt="" style="width: 100%; max-height: 300px">
-            </div>
-            <div class="item">
                 <img src="https://i.ibb.co/FK9DGjL/Property-1-Frame-1.png" alt="" style="width: 100%;max-height: 300px">
             </div>
+
         </div>
     </div>
 
@@ -193,9 +186,9 @@ $buah = $item['buah'];
                         <p>Rp <span id="price"><?= $item['variants_item'][0]['price']; ?></span> / <span id="variant"><?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <button class="beliButton" onClick="updateData()">
+                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
                             beli
-                        </button>
+                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>

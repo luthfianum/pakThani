@@ -10,50 +10,38 @@
 
 </head>
 
-<header>
-    <div class="logo" style="position: relative;">
+
+
+<nav>
+    <a href="<?php echo base_url(); ?>" class="pakthaniLogo" style="padding-top: 10px;">
         <img class="logo" src="<?php echo base_url(); ?>/assets/logo.png" alt="logo">
-    </div>
+    </a>
+    <a href="#">Kategori</a>
+    <input class="search__input" type="text" placeholder="  Pencarian">
+    <ul class="nav_links">
+        <li>
+            <div class="dropdown">
+                <button class="buttonKeranjang">
 
-    <nav>
-        <ul class="nav_links">
-            <li class="div1" style="padding-right: 10rem;"><a href="#">Kategori</a></li>
-            <li class="div2">
-                <input class="search__input" type="text" placeholder="  Pencarian">
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-    <nav>
-        <ul class="nav_links">
-            <li>
-                <div class="dropdown">
-                    <button class="buttonKeranjang">
-                        <div class="dropdown-content">
-                            <div class="item">
-                                manokrajin
-                            </div>
-                            <div class="item">
-                                manokrajin
-                            </div>
-                            <div class="item">
-                                manokrajin
-                            </div>
-                        </div>
-                    </button>
-                </div>
-
-            </li>
-            <li>
-                <button class="buttonListTransaksi">
                 </button>
-            </li>
-        </ul>
-    </nav>
+            </div>
+
+        </li>
+        <li>
+            <button class="buttonListTransaksi">
+            </button>
+        </li>
+    </ul>
+
+</nav>
 
 
-</header>
+
+
+
+
+
+
 
 <body>
     <?= $this->renderSection('content'); ?>

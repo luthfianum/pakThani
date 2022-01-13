@@ -10,23 +10,17 @@
 
 </head>
 
-<header>
-    <div class="logo" style="position: relative;">
+<nav>
+    <a href="<?php echo base_url(); ?>" class="pakthaniLogo" style="padding-top: 10px;">
         <img class="logo" src="<?php echo base_url(); ?>/assets/logo.png" alt="logo">
-    </div>
-
-    <nav>
-        <ul class="nav_links">
-            <li class="div1" style="padding-right: 15rem;"><a href="#">Kategori</a></li>
-            <li class="div2">
-                <input class="search__input" type="text" placeholder="  Pencarian">
-                </div>
-            </li>
-        </ul>
-    </nav>
+    </a>
+    <a href="#">Kategori</a>
+    <input class="search__input" type="text" placeholder="  Pencarian">
     <a class="cta" href="<?php echo base_url(); ?>/login"><button>Login</button></a>
 
-</header>
+</nav>
+
+
 
 <body>
     <?= $this->renderSection('content'); ?>
