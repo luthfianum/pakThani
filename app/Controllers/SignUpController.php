@@ -25,13 +25,29 @@ class SignUpController extends Controller
         ];
 
         if ($this->validate($rules)) {
-            $userModel = new UserModel();
+            $to = $this->request->getVar('email');
+
+            $email = \Config\Services::email();
+            $email->setTo($to);
+            $email->setFrom('timothychristyan10@gmail.com', 'Confirm Registration');
+            $email->setSubject('test mail');
+            $email->setMessage('this is email for testing');
+
+            if ($email->send()) {
+                echo 'Email successfully sent';
+            } else {
+                $data = $email->printDebugger(['headers']);
+                print_r($data);
+            }
+            
             $data = [
                 'username' => $this->request->getVar('username'),
                 'email'    => $this->request->getVar('email'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
+            
             $userModel->save($data);
+            $userModel = new UserModel();
 
             return redirect()->to('/login');
         } else {
