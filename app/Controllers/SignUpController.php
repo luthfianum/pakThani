@@ -25,6 +25,8 @@ class SignUpController extends Controller
         ];
 
         if ($this->validate($rules)) {
+            $userModel = new UserModel();
+            
             $to = $this->request->getVar('email');
 
             $email = \Config\Services::email();
@@ -47,7 +49,6 @@ class SignUpController extends Controller
             ];
 
             $userModel->save($data);
-            $userModel = new UserModel();
 
             return redirect()->to('/login');
         } else {

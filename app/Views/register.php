@@ -32,7 +32,6 @@
                 <?php endif; ?>
 
                 <form action="<?php echo base_url(); ?>/signup" method="post">
-
                     <div class="flex">
                         <label for="user-email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email">
@@ -45,7 +44,7 @@
 
                     <div class="flex">
                         <label for="user-password-confirmation">Konfirmasi Kata Sandi</label>
-                        <input type="password" id="confirmpassword" name="password" placeholder="Konfirmasi Kata Sandi">
+                        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Konfirmasi Kata Sandi">
                     </div>
 
                     <div id="btn-signup">
