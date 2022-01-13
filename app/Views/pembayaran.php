@@ -1,15 +1,17 @@
 <?= $this->extend('/checkout'); ?>
 
 <?= $this->section('content'); ?>
+<title>Pembayaran</title>
+
 <div class="container">
     <div class="hidden">
-                <a href="#"><img src="/assets/arrow.png"><h4>Pembayaran</h4></a>
+                <a href="#"><img src="/assets/Frame_Silang.png"><h4>Pembayaran</h4></a>
                     
                 <h4>Metode Pembayaran</h4>
                 <div class="metode">
                     <div>
-                        <img src="/assets/arrow.png">
-                        <label class="varians hover" for="250" id="label"  onclick="radio()">COD (Bayar di Tempat)</label>
+                        <img src="/assets/cod.png">
+                        <label class="varians hover" for="cod" id="label"  onclick="radio()">COD (Cash On Delivery)</label>
                     </div>
                     <div>
                         <input type="radio" id="cod" name="cod" value="cod">
