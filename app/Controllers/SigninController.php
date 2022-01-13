@@ -1,27 +1,33 @@
 <?php
 
 namespace App\Controllers;
+
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 
-class SigninController extends Controller {
-    public function index() {
+class SigninController extends Controller
+{
+    public $session;
+
+    public function index()
+    {
         helper(['form']);
         echo view('loginAlternate');
     }
 
-    public function loginAuth() {
+    public function loginAuth()
+    {
         $session = session();
         $userModel = new UserModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
         $data = $userModel->where('email', $email)->first();
 
-        if($data) {
+        if ($data) {
             $pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
 
-            if($authenticatePassword) {
+            if ($authenticatePassword) {
                 $ses_data = [
                     'id'         => $data['id'],
                     'username'   => $data['username'],
@@ -31,7 +37,7 @@ class SigninController extends Controller {
 
                 $session->set($ses_data);
 
-                return redirect()->to('/profile');
+                return redirect()->to('/home');
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
 
@@ -42,5 +48,11 @@ class SigninController extends Controller {
 
             return redirect()->to('/login');
         }
+    }
+
+    public function out() {
+        $session->remove(['id', 'username', 'email', 'isLoggedIn']);
+
+        return redirect()->to('/login');
     }
 }

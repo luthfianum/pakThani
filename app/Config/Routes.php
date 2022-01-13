@@ -37,7 +37,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/login', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
-$routes->get('/logout', '');
+$routes->get('/logout', 'SigninController::out');
 $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);     
 $routes->get('/item/(:any)', 'DetailitemController::index/$1');
 

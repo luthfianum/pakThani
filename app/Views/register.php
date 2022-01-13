@@ -16,7 +16,7 @@
         <img src="/assets/logo.png" alt="">
     </div>
 
-    <div class="login-card flex">
+    <div class="signup-card flex">
         <div style="margin: 0 auto; padding: 10% 0; width: 365px;">
             <div class="flex" style="flex-direction: row; justify-content: space-between; align-items: center;">
                 <p style="text-align: left;">Daftar</p>
@@ -35,6 +35,11 @@
 
                     <div class="flex">
                         <label for="user-email">Email</label>
+                        <input type="text" id="username" name="username" placeholder="Username">
+                    </div>   
+                
+                    <div class="flex">
+                        <label for="user-email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email">
                     </div>
 
@@ -45,7 +50,7 @@
 
                     <div class="flex">
                         <label for="user-password-confirmation">Konfirmasi Kata Sandi</label>
-                        <input type="password" id="confirmpassword" name="password" placeholder="Konfirmasi Kata Sandi">
+                        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Konfirmasi Kata Sandi">
                     </div>
 
                     <div id="btn-signup">

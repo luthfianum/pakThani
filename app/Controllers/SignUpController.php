@@ -26,11 +26,28 @@ class SignUpController extends Controller
 
         if ($this->validate($rules)) {
             $userModel = new UserModel();
+            
+            $to = $this->request->getVar('email');
+
+            $email = \Config\Services::email();
+            $email->setTo($to);
+            $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
+            $email->setSubject('Pak Thani Registration');
+            $email->setMessage('Selamat Anda berhasil registrasi');
+
+            if ($email->send()) {
+                echo 'Email successfully sent';
+            } else {
+                $data = $email->printDebugger(['headers']);
+                print_r($data);
+            }
+            
             $data = [
                 'username' => $this->request->getVar('username'),
                 'email'    => $this->request->getVar('email'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
+
             $userModel->save($data);
 
             return redirect()->to('/login');
