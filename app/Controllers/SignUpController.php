@@ -29,9 +29,9 @@ class SignUpController extends Controller
 
             $email = \Config\Services::email();
             $email->setTo($to);
-            $email->setFrom('timothychristyan10@gmail.com', 'Confirm Registration');
-            $email->setSubject('test mail');
-            $email->setMessage('this is email for testing');
+            $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
+            $email->setSubject('Pak Thani Registration');
+            $email->setMessage('Selamat Anda berhasil registrasi');
 
             if ($email->send()) {
                 echo 'Email successfully sent';
@@ -45,7 +45,7 @@ class SignUpController extends Controller
                 'email'    => $this->request->getVar('email'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
-            
+
             $userModel->save($data);
             $userModel = new UserModel();
 
