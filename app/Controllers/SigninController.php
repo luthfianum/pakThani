@@ -7,6 +7,8 @@ use App\Models\UserModel;
 
 class SigninController extends Controller
 {
+    public $session;
+
     public function index()
     {
         helper(['form']);
@@ -46,5 +48,11 @@ class SigninController extends Controller
 
             return redirect()->to('/login');
         }
+    }
+
+    public function out() {
+        $session->remove(['id', 'username', 'email', 'isLoggedIn']);
+
+        return redirect()->to('/login');
     }
 }

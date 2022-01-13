@@ -36,8 +36,8 @@
                     <div class="flex">
                         <label for="user-email">Email</label>
                         <input type="text" id="username" name="username" placeholder="Username">
-                    </div>
-
+                    </div>   
+                
                     <div class="flex">
                         <label for="user-email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email">
