@@ -1,0 +1,255 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.back a {
+  text-decoration: none;
+  color: black;
+  margin: 50px auto;
+}
+
+.back a img {
+  float: left;
+  height: 35px;
+}
+
+.back a div {
+  line-height: 35px;
+  font-weight: bolder;
+  font-size: x-large;
+  margin-left: 50px;
+}
+
+.status ul {
+  list-style-type: none;
+  line-height: 30px;
+}
+
+.status div,
+.status li {
+  display: block;
+  float: left;
+  margin: auto 3px;
+  border: 1px solid grey;
+  min-width: 90px;
+  min-height: 30px;
+  line-height: 30px;
+  text-align: center;
+  padding: 5px auto;
+  border-radius: 10px;
+}
+
+.status div {
+  border: none;
+}
+
+.active {
+  background-color: rgba(247, 209, 0, 1);
+}
+
+.listTransaksi {
+  margin: 20px auto;
+  padding: 3px 3px;
+  border-radius: 12px;
+  border: 5px solid rgba(245, 245, 245, 0.5);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.41);
+}
+
+.tanggal h4 {
+  font-weight: bold;
+}
+
+.tanggal h4 span {
+  font-weight: lighter;
+}
+
+.listTransaksi .atas,
+.listTransaksi .bawah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.atas .barang {
+  display: flex;
+  justify-content: left;
+}
+
+.barang img {
+  width: 75px;
+  border: 1px solid black;
+  margin-right: 20px;
+}
+
+.atas .total {
+  display: flex;
+  justify-content: right;
+}
+
+.total hr {
+  height: 80px;
+  margin: auto 10px;
+}
+
+.total div {
+  margin: auto 10px;
+}
+
+.harga {
+  font-weight: bold;
+}
+
+.statusTransaksi h4 {
+  font-weight: lighter;
+  color: rgb(76, 182, 84);
+}
+
+.detailTransaksi button {
+  width: 200px;
+  background-color: rgb(247, 209, 0);
+  border-radius: 12px;
+  border: none;
+  min-height: 30px;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+
+.containerHidden {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.hidden {
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  border: 5px solid rgba(245, 245, 245, 0.5);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.41);
+  overflow: auto;
+  color: grey;
+}
+
+.hidden a {
+  text-decoration: none;
+  color: grey;
+}
+
+.hidden img {
+  height: 50px;
+  float: left;
+}
+
+.judul {
+  color: black;
+  font-weight: bold;
+}
+
+.statusPembelian,
+.tglPembelian {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 15px;
+}
+
+.tipis {
+  margin: 10px;
+}
+
+.detailProduk .judul {
+  margin-left: 15px;
+}
+
+.produk {
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+}
+
+.card {
+  border: 1px solid grey;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 385px;
+  padding: 10px 15px;
+  margin: 10px 12px;
+}
+
+.card .namaProduk {
+  display: flex;
+  justify-content: left;
+}
+
+.card .namaProduk img {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 75px;
+  height: 75px;
+}
+
+.card .namaProduk div {
+  margin-left: 5px;
+}
+
+.card .hargaProduk {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.card .hargaProduk hr {
+  margin-right: 5px;
+  height: 65px;
+}
+
+.card .hargaProduk .harga {
+  font-weight: bold;
+}
+
+.infoPengiriman .alamat {
+  display: flex;
+  justify-content: left;
+}
+
+.infoPengiriman .alamat .h3pertama {
+  margin-right: 40px;
+}
+.infoPengiriman .alamat .detailAlamat {
+  margin-left: 10px;
+}
+
+.infoPengiriman,
+.rincianPembayaran {
+  margin: auto 15px;
+}
+
+.pembayaran .judul {
+  margin-bottom: 20px;
+}
+
+.total {
+  font-weight: lighter;
+  display: flex;
+  justify-content: space-between;
+}
