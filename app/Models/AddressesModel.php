@@ -42,11 +42,12 @@ class AddressesModel extends Model
 
     public function getByUserId($userId)
     {
-        $cart = $this->db
+        $addresses = $this->db
             ->table('addresses')
             ->select('')
             ->where('user_id', $userId)
             ->get()
             ->getResult('array');
+        return $addresses;
     }
 }
