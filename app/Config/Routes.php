@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('HomeController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 //GET WOI
-$routes->get('/', 'Home::index');
+$routes->get('/', 'HomeController::index');
 $routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/login', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
@@ -44,7 +44,7 @@ $routes->get('/item/(:any)', 'DetailitemController::index/$1');
 //INI POST YAAA!
 $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
-$routes->post('/cart', 'CartController::index/$1');
+$routes->post('/cart', 'CartController::index');
 
 /*
  * --------------------------------------------------------------------
