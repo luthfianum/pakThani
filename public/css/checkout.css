@@ -5,23 +5,18 @@
   margin: auto;
 }
 
-a {
+.checkout a {
   text-decoration: none;
   color: black;
   margin: 50px auto;
 }
 
-.alamat a {
-  color: rgb(76, 182, 84);
-  font-weight: bold;
-}
-
-a img {
+.checkout a img {
   float: left;
   height: 35px;
 }
 
-a div {
+.checkout a div {
   line-height: 35px;
   font-weight: bolder;
   font-size: x-large;
@@ -41,6 +36,9 @@ a div {
 }
 
 .alamat a {
+  color: rgb(76, 182, 84);
+  font-weight: bold;
+  text-decoration: none;
   float: right;
   margin-top: -40px;
   margin-right: 7px;
@@ -98,10 +96,12 @@ a div {
   justify-content: space-between;
 }
 
-.item {
+.item,
+.jumlah {
   display: flex;
   justify-content: left;
 }
+
 .item img {
   width: 60px;
   height: 60px;
@@ -120,12 +120,31 @@ a div {
   color: black;
 }
 
+.jumlah {
+  justify-content: right;
+  align-items: center;
+}
+
 .plusminus {
-  margin: 30px;
+  margin: 35px 10px;
+  display: flex;
+  align-items: center;
 }
 
 .plusminus input {
   text-align: center;
+  padding: 5px 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.plusminus a {
+  text-decoration: none;
+}
+
+.plusminus a img {
+  width: 20px;
+  margin: auto 5px;
 }
 
 .number-input input[type="number"] {
@@ -171,7 +190,7 @@ a div {
   height: 500px;
   position: absolute;
   top: 10%;
-  left: 35%;
+  left: 38%;
   background-color: white;
   padding: 10px;
   border-radius: 12px;
@@ -182,6 +201,7 @@ a div {
 .hidden a {
   color: grey;
   font-weight: lighter;
+  text-decoration: none;
 }
 
 .metode {

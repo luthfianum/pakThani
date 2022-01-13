@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/checkout.css">
-    <title>Checkout</title>
     <?= $this->renderSection('content'); ?>
+    <title>Checkout</title>
 </head>
 <body>
     <div class="container1">
@@ -62,11 +62,14 @@
                         <h3><span>Rp 45.000</span> / 1 kg</h3>
                     </div>
                 </div>
-                <div class="jumlah">
+                <div class="jumlah cf">
+                    <div class="delete">
+                        <button type="button" class="danger">Delete</button>
+                    </div>
                     <div class="plusminus">
-                        <button onclick="decrement()">-</button>
+                        <a onclick="decrement()"><img src="/assets/minus.png"></a>
                         <input id=demoInput type=number min=0 max=110>
-                        <button onclick="increment()">+</button>
+                        <a onclick="increment()"><img src="/assets/tambah.png"></a>
                         </div>
                     <div>
                 </div>
