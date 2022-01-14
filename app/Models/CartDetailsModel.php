@@ -40,15 +40,40 @@ class CartDetailsModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+
+
     public function addItemToCart($cartID, $quantity, $variantID) {
-        $data = [
+        $item = [
             'cart_id' => $cartID,
-            'quantity'  => $quantity,
             'variant_id'  => $variantID,
         ];
+
+        $data = [
+            'quantity'  => $quantity,
+            'cart_id' => $cartID,
+            'variant_id'  => $variantID
+        ];
+
         
-        $this->db
-            ->table("cart_details")
-            ->insert($data);
+        $item_in_cart = $this->db
+                            ->table("cart_details")
+                            ->where($item)
+                            ->select('quantity')
+                            ->get()
+                            ->getResult('array');
+        
+        if(empty($item_in_cart)) {
+            $this->db
+                ->table("cart_details")
+                ->insert($data);    
+        } else {   
+            $quantity += $item_in_cart[0]['quantity'];
+
+            $this->db
+                ->table("cart_details")
+                ->set('quantity', $quantity)
+                ->where($item)
+                ->update();        
+        }
     }
 }
