@@ -1,17 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
+<?php if (isset($this->data['user'])) {
+    $this->extend('template/navbarAfterLogin');
+} else {
+    $this->extend('template/navbarLogin');
+}
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/lihatitem.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/css/detailitem.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Lihat Item</title>
+    <title>Detail Item</title>
 </head>
+
+<?= $this->section('content'); ?>
+
 <body>
     <div class="container">
         <div class="back cf">
@@ -27,11 +38,11 @@
             <div class="text">
                 <div class="judul">
                     <h1><?= $item['name']; ?></h1>
-                    <h2>Rp <span id="price"><?= $item['variant'][0]['price']; ?></span> / <span id="variant"><?= $item['variant'][0]['name']; ?></span> </h2>
+                    <h2>Rp <span id="detailitem_price"><?= end($item['variant'])['price']; ?></span><span id='slash'> / </span><span id="detailitem_variant"><?= end($item['variant'])['name']; ?></span> </h2>
                 </div>
                 <div class="detail">
                     <div>
-                        <h3>Detail Produk</h3> <hr>
+                        <h3>Detail Produk</h3> <hr><br>
                     </div>
                     
                     <p><?= $item['description']; ?></p>
@@ -40,13 +51,15 @@
                     <h3>Pilih Varian</h3>
                     <div class="option" id="varian">
                         <?php foreach ($item['variant'] as $varian) : ?>
-                            <input type="radio" id="<?= $varian['id'] ?>" name="varian" value="<?= $varian['id'] ?>">
-                            <label class="varians hover" for="<?= $varian['name'] ?>" id="label"  onclick='radio(<?= '"'.$varian['price'].'","'.$varian['name'].'"' ?>)'><?= $varian['name'] ?></label>
+                            <input type="radio" id="<?= $varian['id'] ?>" name="varian" value="<?= $varian['id'] ?>"  checked>
+                            <label for="<?= $varian['id'] ?>"  
+                                onclick='radio(<?= '"'.$varian['price'].'","'.$varian['name'].'"' ?>)'>
+                            <?= $varian['name'] ?></label>
                         <?php endforeach; ?>
                     </div>
-                    <div class="plusminus">
+                    <div class="plusminus" style="display:flex;">
                         <button onclick="decrement()">-</button>
-                        <input id=demoInput type=number min=0 max=110>
+                        <input id=demoInput type=number min=0 max=110 value=1 disabled>
                         <button onclick="increment()">+</button>
                     </div>
                     <div class="beli">
@@ -73,16 +86,17 @@
                 });
             }
 
-            let pricePlace = document.getElementById("price");
-            let variantPlace = document.getElementById("variant");
+            let pricePlace = document.getElementById("detailitem_price");
+            let variantPlace = document.getElementById("detailitem_variant");
 
             pricePlace.innerText = price;
             variantPlace.innerText = variant;
         }
 
-        
+
     </script>
 </body>
 
+<?= $this->endSection(); ?>
 
 </html>
