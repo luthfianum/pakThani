@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UserModel;
+use App\Models\CartsModel;
 
 class SignUpController extends Controller
 {
@@ -26,6 +27,7 @@ class SignUpController extends Controller
 
         if ($this->validate($rules)) {
             $userModel = new UserModel();
+            $cart = new CartsModel();
             
             $to = $this->request->getVar('email');
 
@@ -49,6 +51,14 @@ class SignUpController extends Controller
             ];
 
             $userModel->save($data);
+
+            $test = $userModel->where('email', $this->request->getVar('email'))->first();
+
+            $data = [
+                'user_id' => $test['id']
+            ];
+
+            $cart->save($data);
 
             return redirect()->to('/login');
         } else {

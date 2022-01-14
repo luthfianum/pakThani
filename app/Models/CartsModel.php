@@ -14,7 +14,7 @@ class CartsModel extends Model
   protected $returnType       = 'array';
   protected $useSoftDeletes   = true;
   protected $protectFields    = true;
-  protected $allowedFields    = [];
+  protected $allowedFields    = ['user_id', 'is_active'];
 
   // Dates
   protected $useTimestamps = true;
@@ -76,5 +76,16 @@ class CartsModel extends Model
 
     return $cart;
   }
+
+  public function getCartById($cart_Id) {
+    $cart = $this->db
+      ->table('carts')
+      ->select()
+      ->join('transactions', 'carts.id = transactions.cart_id')
+      ->get()
+      ->getResult('array');
+
+    return $cart;
+}
   
 }

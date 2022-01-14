@@ -41,6 +41,7 @@ $routes->get('/logout', 'SigninController::out');
 $routes->get('/profile', 'ProfileController::index', ['filter' => 'authGuard']);
 $routes->get('/item/(:any)', 'DetailitemController::index/$1');
 $routes->get('/checkout', 'TransactionController::checkoutPage');
+$routes->get('/transaction', 'TransactionController::listTransactionPage');
 
 //INI POST YAAA!
 $routes->post('/login', 'SigninController::loginAuth');
