@@ -108,7 +108,7 @@ $buah = $item['buah'];
                         <p><span id="price">Rp <?= $item['variants_item'][0]['price']; ?></span><span id="variant">/<?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
+                        <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $item['slug']; ?>">
                             beli
                         </a>
                     </div>
@@ -136,7 +136,7 @@ $buah = $item['buah'];
                         <p>Rp <span id="price"><?= $item['variants_item'][0]['price']; ?></span> / <span id="variant"><?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
+                        <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $item['slug']; ?>">
                             beli
                         </a>
                     </div>
@@ -186,7 +186,7 @@ $buah = $item['buah'];
                         <p>Rp <span id="price"><?= $item['variants_item'][0]['price']; ?></span> / <span id="variant"><?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
+                        <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $item['slug']; ?>">
                             beli
                         </a>
                     </div>
