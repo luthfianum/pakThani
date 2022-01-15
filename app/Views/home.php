@@ -44,40 +44,40 @@ $buah = $item['buah'];
         </div>
         <div class="kategori" style="width: 33.33%; display:flex; flex-wrap:wrap; align-items:space-between">
             <div class="logoAtas" style="width: 30%; text-align:center;align-items:center ">
-                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/daging" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/D7jgSKx/icon-Thanksgiving.png" alt="" style="width: 50%; ">
                     Daging
                 </a>
             </div>
             <div class="logoAtas" style="width: 30%; text-align:center;">
-                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/buah" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/4R4w5K5/icon-Group-Of-Fruits.png" alt="" style="width: 50%;">
                     Buah
                 </a>
             </div>
             <div class="logoAtas" style="width: 30%; text-align:center; ">
-                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/rempah" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/88xHxQB/icon-Garlic.png" alt="" style="width: 50%;">
                     Rempah
                 </a>
 
             </div>
             <div class="logoAtas" style="width: 30%; text-align:center; ">
-                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/sayur" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/23BGj1r/icon-Group-Of-Vegetables.png" alt="" style="width: 50%;">
                     Sayuran
                 </a>
 
             </div>
             <div class="logoAtas" style="width: 30%; text-align:center; ">
-                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/organik" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/0VpWnxC/icon-Natural-Food.png" alt="" style="width: 50%;">
                     Organik
                 </a>
 
             </div>
             <div class="logoAtas" style="width: 30%; text-align:center; ">
-                <a href="" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/terlaris" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/M5gHb45/icon-Bookmark.png" alt="" style="width: 50%;">
                     Terlaris
                 </a>
@@ -108,7 +108,7 @@ $buah = $item['buah'];
                         <p><span id="price">Rp <?= $item['variants_item'][0]['price']; ?></span><span id="variant">/<?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
+                        <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $item['slug']; ?>">
                             beli
                         </a>
                     </div>
@@ -136,7 +136,7 @@ $buah = $item['buah'];
                         <p>Rp <span id="price"><?= $item['variants_item'][0]['price']; ?></span> / <span id="variant"><?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
+                        <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $item['slug']; ?>">
                             beli
                         </a>
                     </div>
@@ -186,7 +186,7 @@ $buah = $item['buah'];
                         <p>Rp <span id="price"><?= $item['variants_item'][0]['price']; ?></span> / <span id="variant"><?= $item['variants_item'][0]['name']; ?></span> </p>
                     </div>
                     <div class="beliContainer">
-                        <a class="beliButton button" href="<?php echo base_url(); ?> /item/ <?php echo $item['slug']; ?>">
+                        <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $item['slug']; ?>">
                             beli
                         </a>
                     </div>
