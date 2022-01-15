@@ -38,7 +38,7 @@ class SignUpController extends Controller
             $email->setMessage('Selamat Anda berhasil registrasi');
 
             if ($email->send()) {
-                echo 'Email successfully sent';
+                
             } else {
                 $data = $email->printDebugger(['headers']);
                 print_r($data);
@@ -60,7 +60,8 @@ class SignUpController extends Controller
 
             $cart->save($data);
 
-            return redirect()->to('/login');
+            return redirect()->to(base_url() . '/login');
+            //return redirect()->to('/login'); #older version
         } else {
             $data['validation'] = $this->validator;
             echo view('register', $data);
