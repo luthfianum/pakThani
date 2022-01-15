@@ -20,7 +20,7 @@ class CartController extends BaseController {
             # ke home dlu, nanti klo udh jdi pageny perlu dirombak lagi
             return redirect()->to('/'); 
         } else {
-            return redirect()->to('/login'); 
+            return redirect()->to(base_url() . '/login');
         }
     }
 }

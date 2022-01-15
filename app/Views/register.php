@@ -34,7 +34,7 @@
                 <form action="<?php echo base_url(); ?>/signup" method="post">
 
                     <div class="flex">
-                        <label for="user-email">Email</label>
+                        <label for="user-email">Username</label>
                         <input type="text" id="username" name="username" placeholder="Username">
                     </div>   
                 
@@ -57,19 +57,15 @@
                         <button type="submit" value="Submit">Daftar</button>
                     </div>
 
+                   <div id="pembatas-atau">
+                        <img id="atau" src="assets/LoginAlternate_atau.png" alt="">
+                    </div>
+
                     <div id="btn-kembali">
                         <a href="<?php echo base_url(); ?>/login">
                             <button type="button" value="Submit">Kembali</button>
                         </a>
                     </div>
-
-                    <!-- <div id="pembatas-atau">
-                        <img id="atau" src="assets/LoginAlternate_atau.png" alt="">
-                    </div> -->
-
-                    <!-- <div id="btn-daftar">
-                        <button type="submit" value="Submit">Daftar</button>
-                    </div> -->
                 </form>
             </div>
         </div>

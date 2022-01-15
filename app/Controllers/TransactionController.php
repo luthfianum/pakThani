@@ -15,7 +15,7 @@ class TransactionController extends BaseController
       $result['cart'] = $this->CartsModel->getByUserId($userId);
       return view('checkout', $result);
     } else {
-      return redirect()->to('/login');
+      return redirect()->to(base_url() . '/login');
     }
   }
 }

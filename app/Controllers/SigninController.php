@@ -9,14 +9,12 @@ class SigninController extends Controller
 {
     public $session;
 
-    public function index()
-    {
+    public function index() {
         helper(['form']);
         echo view('loginAlternate');
     }
 
-    public function loginAuth()
-    {
+    public function loginAuth() {
         $session = session();
         $userModel = new UserModel();
         $email = $this->request->getVar('email');
@@ -41,12 +39,12 @@ class SigninController extends Controller
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
 
-                return redirect()->to('/login');
+                return redirect()->to(base_url() . '/login');
             }
         } else {
             $session->setFlashdata('msg', 'Email does not exist.');
 
-            return redirect()->to('/login');
+            return redirect()->to(base_url() . '/login');
         }
     }
 
