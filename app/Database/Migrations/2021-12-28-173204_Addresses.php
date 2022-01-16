@@ -18,6 +18,10 @@ class Addresses extends Migration
                 'type' => 'INT',
                 'unasigned' => true,
             ],
+            'kabupaten/kota'=> [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
             'kecamatan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255
@@ -35,15 +39,14 @@ class Addresses extends Migration
                 'constraint' => 255,
                 'null' => true
             ],
-            'created_at' => [
-                'type' => 'DATETIME'
+            'is_active' => [
+                'type' => 'BOOLEAN',
+                'null' => true,
+                'default' => true
             ],
-            'updated_at' => [
-                'type' => 'DATETIME'
-            ],
-            'deleted_at' => [
-                'type' => 'DATETIME'
-            ]
+            'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
+            'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+            'deleted_at DATETIME DEFAULT NULL'
         ]);
         
         $this->forge->addKey('id', true);
