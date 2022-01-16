@@ -55,4 +55,20 @@ class UserModel extends Model
     
     return $user;
   }
+
+  public function getDetailsById($user_id)
+  {
+    $this->AddressesModel = new \App\Models\AddressesModel();
+    $this->CartsModel = new \App\Models\CartsModel();
+    $user = $this->db
+      ->table('users')
+      ->select('email, username, no_telp, is_verified, role')
+      ->where('id', $user_id)
+      ->get()
+      ->getResult('array')[0];
+    $user['address'] = $this->AddressesModel->getByUserId($user_id, true)[0];
+    $user['cart'] = $this->CartsModel->getIdCartActiveByUserId($user_id);
+
+    return $user;
+  }
 }
