@@ -48,6 +48,7 @@ $routes->get('/verification', 'VerificationController::index');
 $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
 $routes->post('/cart', 'CartController::index');
+$routes->post('/checkout', 'TransactionController::checkout');
 
 /*
  * --------------------------------------------------------------------
