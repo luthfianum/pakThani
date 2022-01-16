@@ -73,7 +73,7 @@ class CartDetailsModel extends Model
                 ->table("cart_details")
                 ->set('quantity', $quantity)
                 ->where($item)
-                ->update();        
+                ->update();
         }
     }
 }
