@@ -35,7 +35,7 @@ class SigninController extends Controller
 
                 $session->set($ses_data);
 
-                return redirect()->to('/');
+                return redirect()->to(base_url() . '/');
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
 
@@ -52,6 +52,6 @@ class SigninController extends Controller
         $session = session();
         $session->remove(['id', 'username', 'email', 'isLoggedIn']);
 
-        return redirect()->to('/login');
+        return redirect()->to(base_url() . '/login');
     }
 }
