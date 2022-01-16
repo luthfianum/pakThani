@@ -29,15 +29,9 @@ class Slides extends Migration
                 'type' => 'BOOLEAN',
                 'default' => true
             ],
-            'created_at' => [
-                'type' => 'DATETIME'
-            ],
-            'updated_at' => [
-                'type' => 'DATETIME'
-            ],
-            'deleted_at' => [
-                'type' => 'DATETIME'
-            ]
+            'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
+            'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+            'deleted_at DATETIME DEFAULT NULL'
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('slides');

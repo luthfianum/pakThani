@@ -117,7 +117,7 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $charset = 'UTF-8';
+    public $charset = 'utf-8';
 
     /**
      * Whether to validate the email address

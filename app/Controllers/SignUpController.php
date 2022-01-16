@@ -15,6 +15,14 @@ class SignUpController extends Controller
         echo view('register', $data);
     }
 
+    public function temp()
+    {
+        helper(['form']);
+        $data = [];
+        echo view('email_verification');
+    }
+
+
     public function store()
     {
         helper(['form']);
@@ -28,17 +36,18 @@ class SignUpController extends Controller
         if ($this->validate($rules)) {
             $userModel = new UserModel();
             $cart = new CartsModel();
-            
+
             $to = $this->request->getVar('email');
+            $body = view('email_verification');
 
             $email = \Config\Services::email();
             $email->setTo($to);
             $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
             $email->setSubject('Pak Thani Registration');
-            $email->setMessage('Selamat Anda berhasil registrasi');
+            $email->setMessage($body);
 
             if ($email->send()) {
-                
+                echo 'email-sent';
             } else {
                 $data = $email->printDebugger(['headers']);
                 print_r($data);

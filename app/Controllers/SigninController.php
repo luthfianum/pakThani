@@ -49,6 +49,7 @@ class SigninController extends Controller
     }
 
     public function out() {
+        $session = session();
         $session->remove(['id', 'username', 'email', 'isLoggedIn']);
 
         return redirect()->to('/login');
