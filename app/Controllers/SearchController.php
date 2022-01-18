@@ -11,6 +11,10 @@ class SearchController extends BaseController
     $result = [];
     $result['category'] = $this->CategoriesModel->getAll();
     $result['items'] = $this->ItemsModel->getItemsBySearch($slug);
+    
+    foreach ($result['items'] as $i=>$item ) {
+      $result['items'][$i]['variant'] = $this->VariantsItemModel->getVariantByItemId($item['id']);
+    }
 
     if($session->get('id')){
       $result['user'] = $this->UserModel->getById($session->get('id'));
