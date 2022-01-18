@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.box {
+  padding: 20px;
+  margin: 30px auto;
+  width: 630px;
+  height: 100px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  margin-left: 30%;
+}
+
+/* #pembuka {
+  margin-top: 20px;
+} */
+
+#teks-pembuka {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 90px;
+
+  color: #4cb654;
+}
+
+#teks-isi {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 20px;
+}
+
+#btn-return {
+  justify-content: center;
+  display: flex;
+
+  padding-top: 20px;
+}
+
+#btn-return button {
+  width: 410px;
+  height: 60px;
+  background: #f7d100;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  align-items: center;
+  cursor: pointer;
+}
