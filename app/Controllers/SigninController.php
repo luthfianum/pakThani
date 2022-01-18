@@ -37,7 +37,7 @@ class SigninController extends Controller
 
                 $session->set($ses_data);
 
-                return redirect()->to('/');
+                return redirect()->to(base_url() . '/');
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
 
