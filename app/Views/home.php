@@ -33,8 +33,8 @@ $buah = $item['buah'];
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <div class="carousel" style="display:flex; position:relative ;z-index: -1;">
-        <div class="owl-carousel owl-theme" style="width:55%">
+    <div class="carousel" style="display:flex; position:relative ;">
+        <div class="owl-carousel owl-theme" style="width:55%; z-index: -1;">
             <div class="item">
                 <img src="https://i.ibb.co/FK9DGjL/Property-1-Frame-1.png" alt="" style="width: 100%;max-height: 300px">
             </div>
@@ -67,7 +67,7 @@ $buah = $item['buah'];
 
             </div>
             <div class="logoAtas" style="width: 30%; text-align:center; ">
-                <a href="<?php echo base_url(); ?>/category/sayur" style="display: flex;flex-direction:column; align-items:center ">
+                <a href="<?php echo base_url(); ?>/category/sayuran" style="display: flex;flex-direction:column; align-items:center ">
                     <img src="https://i.ibb.co/23BGj1r/icon-Group-Of-Vegetables.png" alt="" style="width: 50%;">
                     Sayuran
                 </a>
