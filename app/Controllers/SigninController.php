@@ -9,12 +9,14 @@ class SigninController extends Controller
 {
     public $session;
 
-    public function index() {
+    public function index()
+    {
         helper(['form']);
         echo view('loginAlternate');
     }
 
-    public function loginAuth() {
+    public function loginAuth()
+    {
         $session = session();
         $userModel = new UserModel();
         $email = $this->request->getVar('email');
@@ -48,10 +50,11 @@ class SigninController extends Controller
         }
     }
 
-    public function out() {
+    public function out()
+    {
         $session = session();
         $session->remove(['id', 'username', 'email', 'isLoggedIn']);
 
-        return redirect()->to('/login');
+        return redirect()->to(base_url() . '/login');
     }
 }
