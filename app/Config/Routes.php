@@ -45,6 +45,7 @@ $routes->get('/checkout', 'TransactionController::checkoutPage');
 $routes->get('/transaction', 'TransactionController::listTransactionPage');
 $routes->get('/verification', 'VerificationController::index');
 $routes->get('/verificationSucceed', 'VerificationController::succeed');
+$routes->get('search/(:any)', 'SearchController::index/$1');
 
 //INI POST YAAA!
 $routes->post('/login', 'SigninController::loginAuth');

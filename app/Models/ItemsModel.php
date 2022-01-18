@@ -67,6 +67,19 @@ class ItemsModel extends Model
     return $items;
   }
 
+  public function getItemsBySearch(string $slug) {
+    $items = $this->db
+    -> table('items')
+    -> select('items.id, name, image, description, items.slug, categories.slug as category_slug')
+    -> join('categories', 'items.category_id = categories.id')
+    ->like('items.slug', $slug)
+    ->orlike('categories.slug', $slug)
+    ->get()
+    ->getResult('array');
+
+    return $items;
+  }
+
   public function getItem(string $slug)
   {
     $item = $this->db
