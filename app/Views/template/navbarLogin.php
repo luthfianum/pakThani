@@ -15,8 +15,20 @@
     <a href="<?php echo base_url(); ?>" class="pakthaniLogo" style="padding-top: 10px;">
         <img class="logo" src="<?php echo base_url(); ?>/assets/logo.png" alt="logo">
     </a>
-    <a href="#">Kategori</a>
+    <div class="dropdown">
+        <a class="dropbtn" style="cursor: pointer;">Kategori</a>
+        <div class="dropdown-content" style="width: max-content;">
+            <a href="<?php echo base_url(); ?>/category/daging" style="display: flex; align-items:center"><img src="https://i.ibb.co/D7jgSKx/icon-Thanksgiving.png" alt=""> Daging</a>
+            <a href="<?php echo base_url(); ?>/category/buah" style="display: flex; align-items:center"><img src="https://i.ibb.co/4R4w5K5/icon-Group-Of-Fruits.png" alt=""> Buah</a>
+            <a href="<?php echo base_url(); ?>/category/rempah" style="display: flex; align-items:center"><img src="https://i.ibb.co/88xHxQB/icon-Garlic.png" alt=""> Rempah</a>
+            <a href="<?php echo base_url(); ?>/category/sayur" style="display: flex; align-items:center"><img src="https://i.ibb.co/23BGj1r/icon-Group-Of-Vegetables.png" alt=""> Sayuran</a>
+            <a href="<?php echo base_url(); ?>/category/organik" style="display: flex; align-items:center"><img src="https://i.ibb.co/0VpWnxC/icon-Natural-Food.png" alt=""> Organik</a>
+            <a href="<?php echo base_url(); ?>/category/terlaris" style="display: flex; align-items:center"><img src="https://i.ibb.co/M5gHb45/icon-Bookmark.png" alt=""> Terlaris</a>
+        </div>
+    </div>
+
     <input class="search__input" type="text" placeholder="  Pencarian">
+
     <a class="cta" href="<?php echo base_url(); ?>/login"><button>Login</button></a>
 
 </nav>

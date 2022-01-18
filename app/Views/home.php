@@ -2,6 +2,8 @@
 <html lang="en">
 <?php if (isset($this->data['user'])) {
     $this->extend('template/navbarAfterLogin');
+    $user = $this->data['user'];
+    $username = $user['username'];
 } else {
     $this->extend('template/navbarLogin');
 }
@@ -19,6 +21,8 @@ $item = $data['items'];
 $random = $item['random'];
 $daging = $item['daging'];
 $buah = $item['buah'];
+
+
 ?>
 
 
@@ -29,7 +33,7 @@ $buah = $item['buah'];
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <div class="carousel" style="display:flex;">
+    <div class="carousel" style="display:flex; position:relative ;z-index: -1;">
         <div class="owl-carousel owl-theme" style="width:55%">
             <div class="item">
                 <img src="https://i.ibb.co/FK9DGjL/Property-1-Frame-1.png" alt="" style="width: 100%;max-height: 300px">
@@ -92,7 +96,13 @@ $buah = $item['buah'];
 
     <div class="recommendedCard">
         <div class="greeting">
-            <h2>Hai, <span>Mahran</span>! Mau belanja apa hari ini?</h2>
+            <h2>Hai, <?php if (isset($this->data['user'])) {
+                            $user = $this->data['user'];
+                            $username = $user['username'];
+                            echo $username . "!";
+                        }
+
+                        ?> Mau belanja apa hari ini?</h2>
         </div>
         <div class="recommendedText" style="display: flex; justify-content:space-between; padding-right:6rem; align-items:center">
             <h3>Today Recommended</h3>
