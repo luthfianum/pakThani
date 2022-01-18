@@ -13,12 +13,11 @@ class CartController extends BaseController {
             $cartID = $this->CartsModel->getIdCartActiveByUserId($session->get('id'));        
             $quantity = $this->request->getVar('quantity', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $variantID = $this->request->getVar('variantID', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            
-            $this->CartDetailsModel->addItemToCart($cartID, $quantity, $variantID);
+                  
+            $this->CartDetailsModel->addItemToCart($cartID, $quantity, $variantID);      
             # $session->setFlashdata('msg', 'Pemesanan Berhasil');
-            
-            # ke home dlu, nanti klo udh jdi pageny perlu dirombak lagi
-            return redirect()->to('/'); 
+
+            return redirect()->to(previous_url(true));
         } else {
             return redirect()->to(base_url() . '/login');
         }

@@ -26,7 +26,7 @@ $username = $user['username'];
             <a href="<?php echo base_url(); ?>/category/daging" style="display: flex; align-items:center"><img src="https://i.ibb.co/D7jgSKx/icon-Thanksgiving.png" alt=""> Daging</a>
             <a href="<?php echo base_url(); ?>/category/buah" style="display: flex; align-items:center"><img src="https://i.ibb.co/4R4w5K5/icon-Group-Of-Fruits.png" alt=""> Buah</a>
             <a href="<?php echo base_url(); ?>/category/rempah" style="display: flex; align-items:center"><img src="https://i.ibb.co/88xHxQB/icon-Garlic.png" alt=""> Rempah</a>
-            <a href="<?php echo base_url(); ?>/category/sayur" style="display: flex; align-items:center"><img src="https://i.ibb.co/23BGj1r/icon-Group-Of-Vegetables.png" alt=""> Sayuran</a>
+            <a href="<?php echo base_url(); ?>/category/sayuran" style="display: flex; align-items:center"><img src="https://i.ibb.co/23BGj1r/icon-Group-Of-Vegetables.png" alt=""> Sayuran</a>
             <a href="<?php echo base_url(); ?>/category/organik" style="display: flex; align-items:center"><img src="https://i.ibb.co/0VpWnxC/icon-Natural-Food.png" alt=""> Organik</a>
             <a href="<?php echo base_url(); ?>/category/terlaris" style="display: flex; align-items:center"><img src="https://i.ibb.co/M5gHb45/icon-Bookmark.png" alt=""> Terlaris</a>
         </div>
@@ -35,20 +35,17 @@ $username = $user['username'];
 
     <ul class="nav_links">
         <li>
-            <div class="dropdown">
-                <a class="buttonKeranjang">
-                    <img src="/assets/Basket.png" alt="">
-                </a>
-            </div>
-
+            <a class="buttonKeranjang" href="<?php echo base_url(); ?>/checkout">
+                <img src="/assets/Basket.png" alt="">
+            </a>
         </li>
         <li>
-            <a class="buttonListTransaksi">
+            <a class="buttonListTransaksi" href="<?php echo base_url(); ?>/transaction">
                 <img src="/assets/PurchaseOrder.png" alt="">
             </a>
         </li>
         <li>
-            <div class="dropdown">
+            <div class="dropdown-button">
                 <button class="dropbtn" style="cursor: pointer;"><?= $username; ?> </button>
                 <div class="dropdown-content" style="margin-top:45px; margin-left:30px">
                     <a class="alamat" href="<?php echo base_url(); ?>/category/buah" style="display: flex; align-items:center"> Alamat Saya</a>

@@ -63,7 +63,11 @@
                         <button onclick="increment()">+</button>
                     </div>
                     <div class="beli">
-                        <input type="submit" value="Beli">
+                        <form action="<?php echo base_url(); ?>/cart" method="post">
+                            <input type="hidden" name="quantity" value="1" id="qty">
+                            <input type="hidden" name="variantID" value="<?= end($item['variant'])['id']; ?>" id="var">
+                            <input type="submit" value="Beli" id="beli">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -72,9 +76,11 @@
     <script>
         function increment() {
             document.getElementById('demoInput').stepUp();
+            document.getElementById('qty').stepUp();
         }
         function decrement() {
             document.getElementById('demoInput').stepDown();
+            document.getElementById('qty').stepDown();
         }
 
         function radio(price, variant) {
@@ -86,14 +92,13 @@
                 });
             }
 
+            let idPlace = document.getElementById("var");
             let pricePlace = document.getElementById("detailitem_price");
             let variantPlace = document.getElementById("detailitem_variant");
 
             pricePlace.innerText = price;
             variantPlace.innerText = variant;
         }
-
-
     </script>
 </body>
 
