@@ -20,9 +20,13 @@
             border: 1px solid #000000;
             box-sizing: border-box;
             border-radius: 10px;
-        } img {
+        }
+
+        img {
             margin-left: 30%;
-        } .container {
+        }
+
+        .container {
             width: 630px;
             height: 400px;
             background: #ffffff;
@@ -30,35 +34,47 @@
             box-sizing: border-box;
             border-radius: 10px;
             padding: 20px 0;
-        } .flex {
+        }
+
+        .flex {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        } #teks-pembuka {
+        }
+
+        #teks-pembuka {
             font-family: Nunito;
             font-style: normal;
             font-weight: 600;
             font-size: 18px;
             line-height: 49px;
             color: #000000;
-        } #teks-isi {
+        }
+
+        #teks-isi {
             font-family: Nunito;
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
             line-height: 33px;
             color: rgba(0, 0, 0, 0.6);
-        } #teks-penutup {
+        }
+
+        #teks-penutup {
             font-family: Nunito;
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
             line-height: 33px;
             color: rgba(0, 0, 0, 0.6);
-        } #btn-verify {
+        }
+
+        #btn-verify {
             margin: 0 110px;
-        } #btn-verify button {
+        }
+
+        #btn-verify button {
             width: 410px;
             height: 60px;
             background: #f7d100;
