@@ -31,7 +31,9 @@ $username = $user['username'];
             <a href="<?php echo base_url(); ?>/category/terlaris" style="display: flex; align-items:center"><img src="https://i.ibb.co/M5gHb45/icon-Bookmark.png" alt=""> Terlaris</a>
         </div>
     </div>
-    <input class="search__input" type="text" placeholder="  Pencarian">
+    <input id="searchBar" class="search__input" type="text" placeholder="  Pencarian" one onsubmit="search()">
+
+
 
     <ul class="nav_links">
         <li>
@@ -56,6 +58,14 @@ $username = $user['username'];
         </li>
     </ul>
 
+    <script>
+        $("#searchBar").on('keyup', function(e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+                let x = $("#searchBar").val();
+                window.open(`<?php echo base_url(); ?>/search/${x}`, "_self")
+            }
+        });
+    </script>
 
 </nav>
 

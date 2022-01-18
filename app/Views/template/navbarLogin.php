@@ -27,11 +27,20 @@
         </div>
     </div>
 
-    <input class="search__input" type="text" placeholder="  Pencarian">
+    <input id="searchBar" class="search__input" type="text" placeholder="  Pencarian" one onsubmit="search()">
 
     <a class="cta" href="<?php echo base_url(); ?>/login"><button>Login</button></a>
 
 </nav>
+
+<script>
+    $("#searchBar").on('keyup', function(e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            let x = $("#searchBar").val();
+            window.open(`<?php echo base_url(); ?>/search/${x}`, "_self")
+        }
+    });
+</script>
 
 
 

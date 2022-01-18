@@ -25,7 +25,7 @@ $item = $data['items'];
 
 <body>
 
-    <div class="cards" style="display: flex; justify-content:space-around">
+    <div class="cards" style="display: flex; justify-content:start; flex-wrap:wrap; align-items:center; gap: 52px">
         <?php foreach ($items as $d) : ?>
 
             <div class="card" style="margin-top: 20px;">

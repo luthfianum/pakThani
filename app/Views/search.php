@@ -17,7 +17,7 @@ $item = $data['items'];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/css/search.css">
     <title>Home</title>
 
 </head>
@@ -25,7 +25,24 @@ $item = $data['items'];
 
 <body>
 
-    <?= dd($this->data) ?>
+    <div class="cards" style="display: flex; justify-content:start; flex-wrap:wrap; align-items:center; gap: 52px">
+        <?php foreach ($items as $d) : ?>
+
+            <div class="card" style="margin-top: 20px;">
+                <img class="card__image" src="<?= $d['image']; ?>" alt="">
+                <div class="card__content">
+                    <?= $d['name']; ?>
+                    <p><span id="price">Rp <?= $d['variant'][0]['price']; ?></span><span id="variant">/<?= $d['variant'][0]['name']; ?></span> </p>
+                </div>
+                <div class="beliContainer">
+                    <button class="beliButton" onClick="updateData()">
+                        beli
+                    </button>
+                </div>
+
+            </div>
+        <?php endforeach; ?>
+    </div>
 </body>
 <?= $this->endSection(); ?>
 
