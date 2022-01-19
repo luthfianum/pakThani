@@ -51,6 +51,7 @@ class BaseController extends Controller
         // Untuk akses menggunakan model
         $this->request                  = \Config\Services::request();
         $this->db                       = \Config\Database::connect();
+        $this->session                  = \Config\Services::session();  
         
         $this->AddressesModel           = new \App\Models\AddressesModel();
         $this->CartDetailsModel         = new \App\Models\CartDetailsModel();
