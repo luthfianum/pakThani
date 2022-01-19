@@ -110,7 +110,7 @@
             </div>
 
             <div id="btn-verify">
-                <a href="<?php echo base_url(); ?>">
+                <a href="<?php echo base_url() . '/verify'; ?>">
                     <button type="button" value="Submit">Verify Email Address</button>
                 </a>
             </div>

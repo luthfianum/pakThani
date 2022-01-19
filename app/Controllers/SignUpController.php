@@ -19,9 +19,15 @@ class SignUpController extends Controller
     {
         helper(['form']);
         $data = [];
-        echo view('email_verification');
+        echo view('verification_succeed');
     }
 
+    public function verification()
+    {
+        helper(['form']);
+        $data = [];
+        echo view('verification_succeed');
+    }
 
     public function store()
     {

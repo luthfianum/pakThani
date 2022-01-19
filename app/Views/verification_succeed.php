@@ -27,8 +27,8 @@
             </div>
 
             <div id="btn-return">
-                <a href="<?php echo base_url(); ?>">
-                    <button type="button" value="Submit">Go to homepage</button>
+                <a href="<?php echo base_url() . '/login'; ?>">
+                    <button type="button" value="Submit">Go to Login page</button>
                 </a>
             </div>
         </div>
