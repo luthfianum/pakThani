@@ -47,6 +47,10 @@
                         <input type="catatan" id="alamat" name="alamat" placeholder="catatan">
                     </div>
 
+                    <div id="input-group">
+                        <button type="submit" value="Submit">Ubah Alamat</button>
+                    </div>
+
                 </div>
 
             </div>

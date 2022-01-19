@@ -64,3 +64,18 @@ input[type="catatan"] {
   box-sizing: border-box;
   border-radius: 10px;
 }
+
+#input-group button {
+  width: 100%;
+  background: rgba(247, 209, 0, 0.45);
+  border-radius: 10px;
+  margin: 16px 0;
+  padding: 10px;
+  cursor: pointer;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
