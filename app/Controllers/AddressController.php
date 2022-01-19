@@ -1,6 +1,5 @@
 <?php
 
-/*
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
@@ -29,4 +28,4 @@ class AddressController extends BaseController {
 
         return redirect()->to(base_url() . '/checkout');
     }
-} */
+}

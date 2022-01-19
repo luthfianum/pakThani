@@ -53,16 +53,14 @@ class AddressesModel extends Model
     return $result;
   }
 
-<<<<<<< HEAD
-  /*
   public function addAddress($data) {
     $address = $this->db
       ->table('addresses')
       ->insert($data);
 
     return $address;
-  } */
-=======
+  } 
+
   public function changeActiveAddress(int $alamatId)
   {
     $this->db->transBegin();
@@ -85,5 +83,4 @@ class AddressesModel extends Model
       return true;
     }
   }
->>>>>>> a8484e0c8ccc1b77f7edcf42aec06fbf9c6b7456
 }
