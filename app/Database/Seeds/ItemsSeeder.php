@@ -179,7 +179,55 @@ class ItemsSeeder extends Seeder
                 'description'   => 'Deskripsi letaknya disini',
                 'slug'          => 'bayam-merah',
                 'category_id'   => 6
-            ]
+            ],
+            [
+                'id'            => 22,
+                'name'          => 'Alpukat',
+                'image'         => 'https://i.ibb.co/0QSNFf9/alpukat.jpg',
+                'description'   => 'Deskripsi letaknya disini',
+                'slug'          => 'alpukat',
+                'category_id'   => 8
+            ],
+            [
+                'id'            => 23,
+                'name'          => 'Apel',
+                'image'         => 'https://i.ibb.co/kxLrk61/apel.jpg',
+                'description'   => 'Deskripsi letaknya disini',
+                'slug'          => 'apel',
+                'category_id'   => 8
+            ],
+            [
+                'id'            => 24,
+                'name'          => 'Jeruk',
+                'image'         => 'https://i.ibb.co/23G0t9J/jeruk.jpg',
+                'description'   => 'Deskripsi letaknya disini',
+                'slug'          => 'jeruk',
+                'category_id'   => 8
+            ],
+            [
+                'id'            => 25,
+                'name'          => 'Pepaya',
+                'image'         => 'https://i.ibb.co/873pc06/pepaya.jpg',
+                'description'   => 'Deskripsi letaknya disini',
+                'slug'          => 'pepaya',
+                'category_id'   => 8
+            ],
+            [
+                'id'            => 26,
+                'name'          => 'Pisang',
+                'image'         => 'https://i.ibb.co/PFpnSyY/pisang.jpg',
+                'description'   => 'Deskripsi letaknya disini',
+                'slug'          => 'pisang',
+                'category_id'   => 8
+            ],
+            [
+                'id'            => 27,
+                'name'          => 'Semangka',
+                'image'         => 'https://i.ibb.co/5nhGbCZ/semangka.jpg',
+                'description'   => 'Deskripsi letaknya disini',
+                'slug'          => 'semangka',
+                'category_id'   => 8
+            ],
         ];
 
         $this->db->table('items')->insertBatch($data);

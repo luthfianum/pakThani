@@ -11,7 +11,7 @@ class VariantsSeeder extends Seeder
         $data = [];
         $id = 1;
 
-        for ($i = 1; $i <= 21; $i++){
+        for ($i = 1; $i <= 27; $i++){
             $data[] =   [
                             'id'            => $id,
                             'name'          => '250gr',
