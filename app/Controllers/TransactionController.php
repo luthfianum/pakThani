@@ -13,6 +13,9 @@ class TransactionController extends BaseController
     if ($userId) {
       $result['addresses'] = $this->AddressesModel->getByUserId($userId) ?: [];
       $result['cart'] = $this->CartsModel->getByUserId($userId);
+      $result['payment_method'] = $this->PaymentTypesModel->getAll();
+      $result['user'] = $this->UserModel->getById($session->get('id'));
+      $result['user']['cart'] = $this->CartsModel->getByUserId($session->get('id'));
       return view('checkout', $result);
     } else {
       return redirect()->to(base_url() . '/login');

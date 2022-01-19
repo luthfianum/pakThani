@@ -38,7 +38,7 @@
             <div class="text">
                 <div class="judul">
                     <h1><?= $item['name']; ?></h1>
-                    <h2>Rp <span id="detailitem_price"><?= end($item['variant'])['price']; ?></span><span id='slash'> / </span><span id="detailitem_variant"><?= end($item['variant'])['name']; ?></span> </h2>
+                    <h2>Rp <span id="detailitem_price"><?= $item['variant'][0]['price']; ?></span><span id='slash'> / </span><span id="detailitem_variant"><?= $item['variant'][0]['name']; ?></span> </h2>
                 </div>
                 <div class="detail">
                     <div>
@@ -47,11 +47,11 @@
                     
                     <p><?= $item['description']; ?></p>
                 </div>
-                <div class="varian" id="varian">
+                <div class="varian">
                     <h3>Pilih Varian</h3>
                     <div class="option" id="varian">
                         <?php foreach ($item['variant'] as $varian) : ?>
-                            <input type="radio" id="<?= $varian['id'] ?>" name="varian" value="<?= $varian['id'] ?>"  checked>
+                            <input type="radio" id="<?= $varian['id'] ?>" name="varian" value="<?= $varian['id'] ?>">
                             <label for="<?= $varian['id'] ?>"  
                                 onclick='radio(<?= '"'.$varian['price'].'","'.$varian['name'].'"' ?>)'>
                             <?= $varian['name'] ?></label>
@@ -74,6 +74,7 @@
         </div>
     </div>
     <script>
+        document.getElementById('<?=$item['variant'][0]['id']?>').checked = true;
         function increment() {
             document.getElementById('demoInput').stepUp();
             document.getElementById('qty').stepUp();

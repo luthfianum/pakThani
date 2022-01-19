@@ -52,6 +52,7 @@ $routes->get('search/(:any)', 'SearchController::index/$1');
 $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
 $routes->post('/cart', 'CartController::index');
+$routes->post('/address/(:any)', 'AddressController::updateActive/$1');
 $routes->post('/checkout', 'TransactionController::checkout');
 
 /*

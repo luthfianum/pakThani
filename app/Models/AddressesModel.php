@@ -53,6 +53,7 @@ class AddressesModel extends Model
     return $result;
   }
 
+<<<<<<< HEAD
   /*
   public function addAddress($data) {
     $address = $this->db
@@ -61,4 +62,28 @@ class AddressesModel extends Model
 
     return $address;
   } */
+=======
+  public function changeActiveAddress(int $alamatId)
+  {
+    $this->db->transBegin();
+
+    $this->db
+      ->table('addresses')
+      ->set('is_active', 0)
+      ->update();
+    $this->db
+      ->table('addresses')
+      ->where('id', $alamatId)
+      ->set('is_active', 1)
+      ->update();
+
+    if ($this->db->transStatus() === false) {
+      $this->db->transRollback();
+      return false;
+    } else {
+      $this->db->transCommit();
+      return true;
+    }
+  }
+>>>>>>> a8484e0c8ccc1b77f7edcf42aec06fbf9c6b7456
 }
