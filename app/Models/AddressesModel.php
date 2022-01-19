@@ -53,4 +53,27 @@ class AddressesModel extends Model
       ->getResult('array');
     return $result;
   }
+
+  public function changeActiveAddress(int $alamatId)
+  {
+    $this->db->transBegin();
+
+    $this->db
+      ->table('addresses')
+      ->set('is_active', 0)
+      ->update();
+    $this->db
+      ->table('addresses')
+      ->where('id', $alamatId)
+      ->set('is_active', 1)
+      ->update();
+
+    if ($this->db->transStatus() === false) {
+      $this->db->transRollback();
+      return false;
+    } else {
+      $this->db->transCommit();
+      return true;
+    }
+  }
 }
