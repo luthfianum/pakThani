@@ -23,16 +23,16 @@
                 <a href="<?php echo base_url(); ?>"><i class="fas fa-times"></i></a>
             </div>
 
-            <?php if(session()->getFlashdata('msg')):?>
-                <div class="alert alert-warning">
-                    <?= session()->getFlashdata('msg') ?>
-                </div>
-            <?php endif;?>
+            <div class="wrong-input">
+                <?php if(session()->getFlashdata('msg')):?>
+                    <?= session()->getFlashdata('msg') ?></br></br>
+                <?php endif;?>
+            </div>
 
             <div id="form-login">
                 <form class="flex" action="<?php echo base_url(); ?>/login" method="post">
 
-                    <div class="flex">
+                    <div class="flex" >
                         <label for="user-email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email">
                     </div>
