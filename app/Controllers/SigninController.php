@@ -23,21 +23,32 @@ class SigninController extends Controller
         $password = $this->request->getVar('password');
         $data = $userModel->where('email', $email)->first();
 
+        $rules = [
+            'email'     => 'required|min_length[4]|max_length[100]|valid_email',
+            'password'  => 'required|min_length[4]|max_length[50]',
+        ];
+
         if ($data) {
             $pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
 
             if ($authenticatePassword) {
-                $ses_data = [
-                    'id'         => $data['id'],
-                    'username'   => $data['username'],
-                    'email'      => $data['email'],
-                    'isLoggedIn' => TRUE
-                ];
+                if ($data['is_verified'] == 1) {
+                    $ses_data = [
+                        'id'         => $data['id'],
+                        'username'   => $data['username'],
+                        'email'      => $data['email'],
+                        'isLoggedIn' => TRUE
+                    ];
+    
+                    $session->set($ses_data);
+    
+                    return redirect()->to(base_url() . '/');
+                } else {
+                    $session->setFlashdata('msg', 'Account not yet activated.');
 
-                $session->set($ses_data);
-
-                return redirect()->to(base_url() . '/');
+                    return redirect()->to(base_url() . '/login');
+                }
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
 
