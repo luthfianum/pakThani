@@ -6,35 +6,34 @@ use CodeIgniter\Controller;
 use App\Models\UserModel;
 use App\Models\CartsModel;
 
-class SignUpController extends Controller
-{
-    public function index()
-    {
+class SignUpController extends Controller {
+    public function index() {
         helper(['form']);
         $data = [];
         echo view('register', $data);
     }
 
-    public function temp()
-    {
+    public function temp() {
         helper(['form']);
         $data = [];
-        echo view('verification_succeed');
+        echo view('already_verification');
     }
 
-    public function verification($id)
-    {
+    public function verification($id) {
         helper(['form']);
         $userModel = new UserModel();
+        $isVerified = $userModel->getVerifiedById($id);
         $data = [];
 
-        $userModel->accountVerified($id);
-
-        echo view('verification_succeed');
+        if( $isVerified['is_verified'] == 1 ) {
+            echo view('already_verification');
+        } else {
+            $userModel->accountVerified($id);
+            echo view('verification_succeed');
+        }
     }
 
-    public function store()
-    {
+    public function store() {
         helper(['form']);
         $rules = [
             'username'        => 'required|min_length[2]|max_length[50]',

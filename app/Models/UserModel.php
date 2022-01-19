@@ -46,10 +46,10 @@ class UserModel extends Model
 
   public function accountVerified(int $user_id) {
     $this->db
-    ->table('users')
-    ->where('id', $user_id)
-    ->set('is_verified', 1)
-    ->update();
+      ->table('users')
+      ->where('id', $user_id)
+      ->set('is_verified', 1)
+      ->update();
   }
 
   public function getByID(int $user_id)
@@ -62,6 +62,17 @@ class UserModel extends Model
       ->getResult('array')[0];
     
     return $user;
+  }
+
+  public function getVerifiedById($user_id) {
+    $verified = $this->db
+      ->table('users')
+      ->select('is_verified')
+      ->where('id', $user_id)
+      ->get()
+      ->getResult('array')[0];
+
+    return $verified;
   }
 
   public function getDetailsById($user_id)
