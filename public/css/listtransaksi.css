@@ -40,6 +40,10 @@
   border-radius: 10px;
 }
 
+.status li:hover {
+  cursor: pointer;
+}
+
 .status div {
   border: none;
 }
@@ -186,7 +190,7 @@
   color: black;
 }
 
-.card {
+/* .card {
   border: 1px solid grey;
   border-radius: 10px;
   display: flex;
@@ -225,7 +229,7 @@
 
 .card .hargaProduk .harga {
   font-weight: bold;
-}
+} */
 
 .infoPengiriman .alamat {
   display: flex;

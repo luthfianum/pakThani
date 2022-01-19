@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php if (isset($this->data['user'])) {
+    $this->extend('template/navbarAfterLogin');
+} else {
+    $this->extend('template/navbarLogin');
+}
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/listtransaksi.css">
-    <?= $this->renderSection('content'); ?>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/css/listtransaksi.css">
+
     <title>List Transaksi</title>
 </head>
+
+<?= $this->section('content'); ?>
+
 <body>
     <div class="container">
         <div class="back cf">
-            <a href="#">
+            <a href="<?php echo base_url(); ?>">
                 <img src="/assets/arrow.png">
                 <div>List Transaksi</div>
             </a>
@@ -23,36 +34,39 @@
                 <li onclick="list()">Selesai</li>
             </ul>
         </div>
-        <div class="listTransaksi">
-            <div class="tanggal">
-                <h4>Belanja <span>3 Desember 2021</span></h4>
-            </div>
-            <div class="atas">
-                <div class="barang cf">
-                    <img src="">
-                    <div>
-                        <h3>Daging Sapi Amazon</h3>
-                        <h4>Varian : 1 kg</h4>
+        <div id="list_transaksi">
+            <?php foreach ($transactions as $transaksi) : ?>
+            <div class="listTransaksi">
+                <div class="tanggal">
+                    <h4>Belanja <span><?= $transaksi['created_at'] ?></span></h4>
+                </div>
+                <div class="atas">
+                    <div class="barang cf">
+                        <img src="<?= $transaksi['cart']['cartDetails'][0]['image'] ?>">
+                        <div>
+                            <h3><?= $transaksi['cart']['cartDetails'][0]['item_name'] ?></h3>
+                            <h4>Varian : <?= $transaksi['cart']['cartDetails'][0]['variant'] ?></h4>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <hr>
+                        <div>
+                            <h4>Total Belanja</h4>
+                            <h4 class="harga"><?= $transaksi['cart']['total'] ?></h4>
+                        </div>
                     </div>
                 </div>
-                <div class="total">
-                    <hr>
-                    <div>
-                        <h4>Total Belanja</h4>
-                        <h4 class="harga">Rp 47000</h4>
+                <div class="bawah">
+                    <div class="statusTransaksi">
+                        <h4>Status : <span><?= $transaksi['status']?></span></h4>
+                    </div>
+                    <div class="detailTransaksi">
+                        <button>Detail Transaksi</button>
                     </div>
                 </div>
             </div>
-            <div class="bawah">
-                <div class="statusTransaksi">
-                    <h4>Status : <span>Sedang diantarkan oleh kurir</span></h4>
-                </div>
-                <div class="detailTransaksi">
-                    <button>Detail Transaksi</button>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
-
     </div>
 
     <script>
@@ -66,5 +80,8 @@
             }
         }
     </script>
-</body>
+</body> 
+
+<?= $this->endSection(); ?>
+
 </html>

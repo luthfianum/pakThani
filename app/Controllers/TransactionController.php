@@ -62,7 +62,7 @@ class TransactionController extends BaseController
         $result['transactions'][$i]['address'] = $this->AddressesModel->find($addressId);
         $result['transactions'][$i]['cart'] = $this->CartsModel->getDetailsById($cartId);
       }
-      dd($result);
+      
       return view('list_transaksi', $result);
     } else {
       return redirect()->to(base_url() . '/login');
