@@ -23,14 +23,13 @@
                 <a href="<?php echo base_url(); ?>"><i class="fas fa-times"></i></a>
             </div>
 
-            <div id="form-signup">
-
+            <div class="wrong-input">
                 <?php if (isset($validation)) : ?>
-                    <div class="alert alert-warning">
-                        <?= $validation->listErrors() ?>
-                    </div>
+                    <?= $validation->listErrors() ?>
                 <?php endif; ?>
+            </div>
 
+            <div id="form-signup">
                 <form action="<?php echo base_url(); ?>/signup" method="post">
 
                     <div class="flex">

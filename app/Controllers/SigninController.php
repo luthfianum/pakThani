@@ -21,12 +21,19 @@ class SigninController extends Controller
         $userModel = new UserModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
-        $data = $userModel->where('email', $email)->first();
 
-        $rules = [
-            'email'     => 'required|min_length[4]|max_length[100]|valid_email',
-            'password'  => 'required|min_length[4]|max_length[50]',
-        ];
+        if ($email == "") {
+            $session->setFlashdata('msg', 'Please fill the email section.');
+            return redirect()->to(base_url() . '/login');
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $session->setFlashdata('msg', 'Email format incorrect.');
+            return redirect()->to(base_url() . '/login');
+        } else if ($password == "") {
+            $session->setFlashdata('msg', 'Please fill the password.');
+            return redirect()->to(base_url() . '/login');
+        }
+
+        $data = $userModel->where('email', $email)->first();
 
         if ($data) {
             $pass = $data['password'];
