@@ -61,6 +61,7 @@ class BaseController extends Controller
         $this->SlidesModel              = new \App\Models\SlidesModel();
         $this->TransactionsModel        = new \App\Models\TransactionsModel();
         $this->TransactionStatusModel   = new \App\Models\TransactionStatusModel();
+        $this->PaymentTypesModel        = new \App\Models\PaymentTypesModel();
         $this->UserModel                = new \App\Models\UserModel();
         $this->VariantsItemModel        = new \App\Models\VariantsItemModel();
     }
