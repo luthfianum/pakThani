@@ -22,10 +22,14 @@ class SignUpController extends Controller
         echo view('verification_succeed');
     }
 
-    public function verification()
+    public function verification($id)
     {
         helper(['form']);
+        $userModel = new UserModel();
         $data = [];
+
+        $userModel->accountVerified($id);
+
         echo view('verification_succeed');
     }
 
@@ -42,22 +46,6 @@ class SignUpController extends Controller
         if ($this->validate($rules)) {
             $userModel = new UserModel();
             $cart = new CartsModel();
-
-            $to = $this->request->getVar('email');
-            $body = view('email_verification');
-
-            $email = \Config\Services::email();
-            $email->setTo($to);
-            $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
-            $email->setSubject('Pak Thani Registration');
-            $email->setMessage($body);
-
-            if ($email->send()) {
-                echo 'email-sent';
-            } else {
-                $data = $email->printDebugger(['headers']);
-                print_r($data);
-            }
             
             $data = [
                 'username' => $this->request->getVar('username'),
@@ -72,6 +60,22 @@ class SignUpController extends Controller
             $data = [
                 'user_id' => $test['id']
             ];
+
+            $to = $this->request->getVar('email');
+            $body = view('email_verification', $data);
+
+            $email = \Config\Services::email();
+            $email->setTo($to);
+            $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
+            $email->setSubject('Pak Thani Registration');
+            $email->setMessage($body);
+
+            if ($email->send()) {
+                echo 'email-sent';
+            } else {
+                $data = $email->printDebugger(['headers']);
+                print_r($data);
+            }
 
             $cart->save($data);
 

@@ -44,6 +44,14 @@ class UserModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
+  public function accountVerified(int $user_id) {
+    $this->db
+    ->table('users')
+    ->where('id', $user_id)
+    ->set('is_verified', 1)
+    ->update();
+  }
+
   public function getByID(int $user_id)
   {
     $user = $this->db
