@@ -61,7 +61,7 @@ class AddressesModel extends Model
     return $address;
   } 
 
-  public function changeActiveAddress(int $alamatId)
+  public function changeActiveAddress(int $userId, int $alamatId)
   {
     $this->db->transBegin();
 
@@ -72,6 +72,7 @@ class AddressesModel extends Model
     $this->db
       ->table('addresses')
       ->where('id', $alamatId)
+      ->where('user_id', $userId)
       ->set('is_active', 1)
       ->update();
 

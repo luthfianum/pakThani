@@ -28,4 +28,16 @@ class AddressController extends BaseController {
 
         return redirect()->to(base_url() . '/checkout');
     }
+
+    public function updateActive($addressId) {
+        $user_id = $this->session->get('id');
+
+        $result = $this->AddressesModel->changeActiveAddress($user_id, $addressId);
+        if($result){
+            $this->session->setFlashdata('msg', 'Alamat berhasil diubah.');
+        }else{
+            $this->session->setFlashdata('msg', 'Alamat gagal diubah.');
+        }
+        return redirect()->to(base_url() . '/checkout');
+    }
 }
