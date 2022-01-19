@@ -10,15 +10,11 @@ class TransactionStatusSeeder extends Seeder
     {
         $data = [
             [
-                'id'            => 1,
-                'status'          => 'Disiapkan',
+                'id'              => 1,
+                'status'          => 'Berlangsung',
             ],
             [
-                'id'            => 2,
-                'status'          => 'Dikirim',
-            ],
-            [
-                'id'            => 3,
+                'id'              => 2,
                 'status'          => 'Selesai',
             ],
         ];

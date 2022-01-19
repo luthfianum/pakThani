@@ -17,5 +17,6 @@ class Main extends Seeder
         $this->call('AddressSeeder');
         $this->call('PaymentTypeSeeder');
         $this->call('TransactionStatusSeeder');
+        $this->call('TransactionsSeeder');
     }
 }

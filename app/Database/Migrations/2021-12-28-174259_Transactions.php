@@ -33,7 +33,7 @@ class Transactions extends Migration
             'delivery_cost' => [
                 'type' => 'INT'
             ],
-            'transaction_type_id' => [
+            'payment_type_id' => [
                 'type' => 'INT',
             ],
             'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
@@ -45,7 +45,7 @@ class Transactions extends Migration
         $this->forge->addForeignKey('user_id', 'users', 'id');
         $this->forge->addForeignKey('address_id', 'addresses', 'id');
         $this->forge->addForeignKey('status_id', 'transaction_status', 'id');
-        $this->forge->addForeignKey('transaction_type_id', 'payment_types', 'id');
+        $this->forge->addForeignKey('payment_type_id', 'payment_types', 'id');
         $this->forge->createTable('transactions');
     }
 
