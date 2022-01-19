@@ -3,6 +3,8 @@
 .container3 {
   width: 80%;
   margin: auto;
+
+  font-family: Nunito;
 }
 
 .checkout a {
@@ -68,6 +70,14 @@
   margin: 5px auto;
   font-weight: bolder;
   font-size: large;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+.pembayaran .button {
+  text-align: center;
+  line-height: 40px;
 }
 
 .total {
@@ -95,6 +105,7 @@
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
+  margin: 16px;
 }
 
 .item,

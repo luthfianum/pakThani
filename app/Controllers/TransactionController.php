@@ -29,11 +29,10 @@ class TransactionController extends BaseController
 
     if ($userId) {
       $this->db->transBegin();
-      $paymentTypeId = $this->request->getVar('paymentTypeId', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       $user = $this->UserModel->getDetailsById($userId);
       $cartId = $user['cart']['id'];
       $addressesId = $user['address']['id'];
-      $transaction = $this->TransactionsModel->createTransaction($userId, $cartId, $addressesId, $paymentTypeId);
+      $transaction = $this->TransactionsModel->createTransaction($userId, $cartId, $addressesId);
       
       if ($this->db->transStatus() === false) {
         $this->db->transRollback();
