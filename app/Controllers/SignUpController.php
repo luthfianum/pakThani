@@ -6,29 +6,36 @@ use CodeIgniter\Controller;
 use App\Models\UserModel;
 use App\Models\CartsModel;
 
-class SignUpController extends Controller {
+class SignUpController extends Controller {  
     public function index() {
         helper(['form']);
         $data = [];
         echo view('register', $data);
     }
 
-    public function temp() {
-        helper(['form']);
-        $data = [];
-        echo view('already_verification');
-    }
-
     public function verification($id) {
         helper(['form']);
+        
+        $encryption_iv = '13112000qwerplmo';
+        $encryption_key = "PakThani";
+        $ciphering = "AES-128-CTR";
+        $id_string = openssl_decrypt($id, $ciphering, $encryption_key, 0, $encryption_iv);
+        $id_int = (int)$id_string;
+
         $userModel = new UserModel();
-        $isVerified = $userModel->getVerifiedById($id);
-        $data = [];
+        $isVerified = $userModel->getVerifiedById($id_int);
 
         if( $isVerified['is_verified'] == 1 ) {
             echo view('already_verification');
         } else {
-            $userModel->accountVerified($id);
+            $data = [
+                'user_id' => $id_int
+            ];
+
+            $cart = new CartsModel();
+            $userModel->accountVerified($id_int);
+            $cart->insert($data);
+
             echo view('verification_succeed');
         }
     }
@@ -44,8 +51,6 @@ class SignUpController extends Controller {
 
         if ($this->validate($rules)) {
             $userModel = new UserModel();
-            $cart = new CartsModel();
-            
             $data = [
                 'username' => $this->request->getVar('username'),
                 'email'    => $this->request->getVar('email'),
@@ -53,33 +58,32 @@ class SignUpController extends Controller {
             ];
 
             $userModel->save($data);
-
             $test = $userModel->where('email', $this->request->getVar('email'))->first();
 
+            $encryption_iv = '13112000qwerplmo';
+            $encryption_key = "PakThani";
+            $ciphering = "AES-128-CTR";
+            $iv_length = openssl_cipher_iv_length($ciphering);
+            $encryption = openssl_encrypt(strval($test['id']), $ciphering, $encryption_key, 0, $encryption_iv);
+    
             $data = [
-                'user_id' => $test['id']
+                'user_id' =>$encryption,
             ];
 
+            $email = \Config\Services::email();
             $to = $this->request->getVar('email');
             $body = view('email_verification', $data);
-
-            $email = \Config\Services::email();
             $email->setTo($to);
             $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
             $email->setSubject('Pak Thani Registration');
             $email->setMessage($body);
 
             if ($email->send()) {
-                echo 'email-sent';
+                return redirect()->to(base_url() . '/login');
             } else {
                 $data = $email->printDebugger(['headers']);
                 print_r($data);
             }
-
-            $cart->save($data);
-
-            return redirect()->to(base_url() . '/login');
-            //return redirect()->to('/login'); #older version
         } else {
             $data['validation'] = $this->validator;
             echo view('register', $data);
