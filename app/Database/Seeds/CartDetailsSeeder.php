@@ -22,6 +22,20 @@ class CartDetailsSeeder extends Seeder
                 'note'          => '',
                 'cart_id'       => 1,
                 'variant_id'    => 3
+            ],
+            [
+                'id'            => 3,
+                'quantity'      => '2',
+                'note'          => '',
+                'cart_id'       => 2,
+                'variant_id'    => 8
+            ],
+            [
+                'id'            => 4,
+                'quantity'      => '1',
+                'note'          => '',
+                'cart_id'       => 3,
+                'variant_id'    => 19
             ]
         ];
 
