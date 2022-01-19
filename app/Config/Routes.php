@@ -34,9 +34,9 @@ $routes->setAutoRoute(true);
 
 //GET WOI
 $routes->get('/', 'HomeController::index');
+$routes->get('/address', 'AddressController::addAddress');
 $routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/verify/(:any)', 'SignupController::verification/$1');
-$routes->get('/test', 'SignupController::temp');
 $routes->get('/login', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->get('/logout', 'SigninController::out');

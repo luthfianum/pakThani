@@ -40,8 +40,7 @@ class AddressesModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function getByUserId(int $userId, bool $is_active = NULL)
-  {
+  public function getByUserId(int $userId, bool $is_active = NULL) {
     $addresses = $this->db
       ->table('addresses')
       ->select('')
@@ -53,6 +52,14 @@ class AddressesModel extends Model
       ->getResult('array');
     return $result;
   }
+
+  public function addAddress($data) {
+    $address = $this->db
+      ->table('addresses')
+      ->insert($data);
+
+    return $address;
+  } 
 
   public function changeActiveAddress(int $alamatId)
   {
