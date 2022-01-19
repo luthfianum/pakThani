@@ -7,7 +7,7 @@ class SearchController extends BaseController
   
   public function index($slug)
   {
-    $session = session();
+    $userId = $this->session->get('id');
     $result = [];
     $result['category'] = $this->CategoriesModel->getAll();
     $result['items'] = $this->ItemsModel->getItemsBySearch($slug);
@@ -16,9 +16,9 @@ class SearchController extends BaseController
       $result['items'][$i]['variant'] = $this->VariantsItemModel->getVariantByItemId($item['id']);
     }
 
-    if($session->get('id')){
-      $result['user'] = $this->UserModel->getById($session->get('id'));
-      $result['user']['cart'] = $this->CartsModel->getByUserId($session->get('id'));
+    if($userId){
+      $result['user'] = $this->UserModel->getById($userId);
+      $result['user']['cart'] = $this->CartsModel->getByUserId($userId);
     }
 
     return view('search', $result);

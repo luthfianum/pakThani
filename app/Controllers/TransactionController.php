@@ -6,16 +6,15 @@ class TransactionController extends BaseController
 {
   public function checkoutPage()
   {
-    $session = session();
-    $userId = $session->get('id');
+    $userId = $this->session->get('id');
     $result = [];
 
     if ($userId) {
       $result['addresses'] = $this->AddressesModel->getByUserId($userId) ?: [];
       $result['cart'] = $this->CartsModel->getByUserId($userId);
       $result['payment_method'] = $this->PaymentTypesModel->getAll();
-      $result['user'] = $this->UserModel->getById($session->get('id'));
-      $result['user']['cart'] = $this->CartsModel->getByUserId($session->get('id'));
+      $result['user'] = $this->UserModel->getById($userId);
+      $result['user']['cart'] = $this->CartsModel->getByUserId($userId);
       return view('checkout', $result);
     } else {
       return redirect()->to(base_url() . '/login');
@@ -24,8 +23,7 @@ class TransactionController extends BaseController
 
   public function checkout()
   {
-    $session = session();
-    $userId = $session->get('id');
+    $userId = $this->session->get('id');
 
     if ($userId) {
       $this->db->transBegin();
@@ -36,10 +34,10 @@ class TransactionController extends BaseController
       
       if ($this->db->transStatus() === false) {
         $this->db->transRollback();
-        $session->setFlashdata('msg', 'Transaksi Gagal Dibuat');
+        $this->session->setFlashdata('msg', 'Transaksi Gagal Dibuat');
       } else {
         $this->db->transCommit();
-        $session->setFlashdata('msg', 'Transaksi Berhasil Dibuat');
+        $this->session->setFlashdata('msg', 'Transaksi Berhasil Dibuat');
       }
       return redirect()->to(base_url() . '/transaction');
     } else {
@@ -49,13 +47,12 @@ class TransactionController extends BaseController
 
   public function listTransactionPage()
   {
-    $session = session();
-    $userId = $session->get('id');
+    $userId = $this->session->get('id');
     $result = [];
     if ($userId) {
       $result['transactions'] = $this->TransactionsModel->getByUserId($userId);
-      $result['user'] = $this->UserModel->getById($session->get('id'));
-      $result['user']['cart'] = $this->CartsModel->getByUserId($session->get('id'));
+      $result['user'] = $this->UserModel->getById($userId);
+      $result['user']['cart'] = $this->CartsModel->getByUserId($userId);
       foreach($result['transactions'] as $i=>$transaction){
         $addressId = $result['transactions'][$i]['address_id'];
         $cartId = $result['transactions'][$i]['cart_id'];
