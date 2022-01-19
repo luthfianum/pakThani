@@ -9,8 +9,9 @@ class CartController extends BaseController
 {
     public function index()
     {
-        if ($this->session->get('id')) {
-            $cartID = $this->CartsModel->getIdCartActiveByUserId($this->session->get('id'));
+        $userId = $this->session->get('id');
+        if ($userId) {
+            $cartID = $this->CartsModel->getIdCartActiveByUserId($userId);
             $quantity = $this->request->getVar('quantity', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $variantID = $this->request->getVar('variantID', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 

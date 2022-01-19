@@ -29,9 +29,9 @@
         </div>
         <div class="status cf">
             <ul><div>Status</div>
-                <li class="active" onclick="list()">Semua</li>
-                <li onclick="list()">Berlangsung</li>
-                <li onclick="list()">Selesai</li>
+                <li class="active" onclick="list('')">Semua</li>
+                <li onclick="list('Berlangsung')">Berlangsung</li>
+                <li onclick="list('Selesai')">Selesai</li>
             </ul>
         </div>
         <div id="list_transaksi">
@@ -70,8 +70,20 @@
     </div>
 
     <script>
-        function list() {
-            let li = document.getElementsByTagName("li");
+        function list(status) {
+            let listtransaksi = document.querySelectorAll(".listTransaksi");
+           for (const transaksi of listtransaksi) {
+            let flag = transaksi.outerHTML.includes(status)
+                console.log(flag)
+                if (!flag){
+                    transaksi.classList.add('hidden')
+                }
+                else{
+                    transaksi.classList.remove('hidden')
+                }
+               
+           }
+           let li = document.getElementsByTagName("li");
             for (let i = 0; i < li.length; i++) {
                 li[i].classList.remove("active");
                 li[i].addEventListener("click", function() {
