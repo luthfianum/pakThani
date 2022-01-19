@@ -48,7 +48,7 @@ class TransactionsModel extends Model
       'cart_id' => $cartId,
       'status_id' => 1,
       'delivery_cost' => 5000,
-      'transaction_type_id' => $paymentTypeId,
+      'payment_type_id' => $paymentTypeId,
     ];
     // change all cart is_active to false
     $this->db
