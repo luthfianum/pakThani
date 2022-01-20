@@ -69,7 +69,7 @@ class AddressesModel extends Model
 
     if ($this->db->transStatus() === false) {
       $this->db->transRollback();
-      return false;
+      return null;
     } else {
       $this->db->transCommit();
       return $address;
