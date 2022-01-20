@@ -54,9 +54,23 @@ class AddressesModel extends Model
   }
 
   public function addAddress($data) {
+    $this->db->transBegin();
+    $this->db
+    ->table('addresses')
+    ->set('is_active', 0)
+    ->update();
+    
     $address = $this->db
       ->table('addresses')
       ->insert($data);
+
+      if ($this->db->transStatus() === false) {
+        $this->db->transRollback();
+        return false;
+      } else {
+        $this->db->transCommit();
+        return $address;
+      }
 
     return $address;
   } 
