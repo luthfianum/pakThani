@@ -42,7 +42,7 @@
                         <input type="password" id="password" name="password" placeholder="Kata Sandi">
                     </div>
 
-                    <a href="">Lupa kata sandi?</a>
+                    <!-- <a href="">Lupa kata sandi?</a> -->
 
                     <div id="btn-login">
                         <button type="submit" value="Submit">Login</button>
