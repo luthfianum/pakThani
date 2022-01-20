@@ -40,12 +40,12 @@ class SlidesModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function getAllSlides(bool $is_active = true)
-  {
+  public function getAllSlides(bool $is_active = true) {
     $slides = $this->db->table('slides')
-      ->where('is_active', $is_active)
-      ->get()
-      ->getResult('array');
+                      ->where('is_active', $is_active)
+                      ->get()
+                      ->getResult('array');
+                      
     return $slides;
   }
 }

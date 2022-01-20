@@ -43,11 +43,11 @@ class VariantsItemModel extends Model
   public function getVariantByItemId(int $item_id)
   {
     $variant = $this->db
-      ->table('variants_item')
-      ->select('id, name, price')
-      ->where('item_id', $item_id)
-      ->get()
-      ->getResult('array');
+                    ->table('variants_item')
+                    ->select('id, name, price')
+                    ->where('item_id', $item_id)
+                    ->get()
+                    ->getResult('array');
 
     return $variant;
   }

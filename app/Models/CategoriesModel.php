@@ -40,17 +40,20 @@ class CategoriesModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function getAll()
-  {
+  public function getAll() {
     $categories = $this->db
-      ->table('categories')
-      ->select('id,category as name, icon, slug')
-      ->get()
-      ->getResult('array');
-    $categories = array_map(function ($category) {
-      $category['url'] = base_url('/category/' . $category['slug']);
-      return $category;
-    }, $categories);
+                      ->table('categories')
+                      ->select('id,category as name, icon, slug')
+                      ->get()
+                      ->getResult('array');
+
+    $categories = array_map(
+      function ($category) {
+        $category['url'] = base_url('/category/' . $category['slug']);
+        
+        return $category;
+      }, $categories
+    );
 
     return $categories;
   }

@@ -40,18 +40,16 @@ class CartDetailsModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-
-
-    public function addItemToCart($cartID, $quantity, $variantID) {
+    public function addItemToCart($cart_id, $quantity, $variant_id) {
         $item = [
-            'cart_id' => $cartID,
-            'variant_id'  => $variantID,
+            'cart_id' => $cart_id,
+            'variant_id'  => $variant_id,
         ];
 
         $data = [
             'quantity'  => $quantity,
-            'cart_id' => $cartID,
-            'variant_id'  => $variantID
+            'cart_id' => $cart_id,
+            'variant_id'  => $variant_id
         ];
 
         

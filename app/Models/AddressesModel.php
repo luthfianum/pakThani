@@ -46,11 +46,13 @@ class AddressesModel extends Model
       ->table('addresses')
       ->select('')
       ->where('user_id', $userId);
+
     if (!is_null($is_active)) {
       $addresses->where('is_active', $is_active);
     }
-    $result = $addresses->get()
-      ->getResult('array');
+
+    $result = $addresses->get()->getResult('array');
+
     return $result;
   }
 
@@ -63,7 +65,7 @@ class AddressesModel extends Model
       ->set('is_active', 0)
       ->update();
 
-    $address = $this->db
+    $addresses = $this->db
       ->table('addresses')
       ->insert($data);
 
@@ -72,13 +74,11 @@ class AddressesModel extends Model
       return null;
     } else {
       $this->db->transCommit();
-      return $address;
+      return $addresses;
     }
-
-    return $address;
   }
 
-  public function changeActiveAddress(int $user_id, int $alamatId)
+  public function changeActiveAddress(int $user_id, int $alamat_id)
   {
     $this->db->transBegin();
 
@@ -89,16 +89,18 @@ class AddressesModel extends Model
       ->update();
     $this->db
       ->table('addresses')
-      ->where('id', $alamatId)
+      ->where('id', $alamat_id)
       ->where('user_id', $user_id)
       ->set('is_active', 1)
       ->update();
 
     if ($this->db->transStatus() === false) {
       $this->db->transRollback();
+
       return false;
     } else {
       $this->db->transCommit();
+
       return true;
     }
   }
