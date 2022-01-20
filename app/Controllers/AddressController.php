@@ -4,16 +4,18 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class AddressController extends BaseController {
-    public function addAddress() {
+class AddressController extends BaseController
+{
+    public function addAddress()
+    {
         $user_id = $this->session->get('id');
 
-        if($user_id) {
+        if ($user_id) {
             $data = [
                 'user_id'        => $user_id,
-                'kabupaten/kota' => $this->request->getVar('kabuoaten/kota') ?? "unknown",
+                'kabupaten/kota' => $this->request->getVar('kabupaten/kota') ?? "unknown",
                 'kecamatan'      => $this->request->getVar('kecamatan') ?? "unknown",
-                'kelurahan'      => $this->request->getVar('kelurahan') ?? "unknwon",
+                'kelurahan'      => $this->request->getVar('kelurahan') ?? "unknown",
                 'alamat'         => $this->request->getVar('alamat'),
                 'note'           => $this->request->getVar('note') ?? "none",
                 'is_active'      => true
@@ -29,13 +31,14 @@ class AddressController extends BaseController {
         return redirect()->to(base_url() . '/checkout');
     }
 
-    public function updateActive($addressId) {
+    public function updateActive($addressId)
+    {
         $user_id = $this->session->get('id');
 
         $result = $this->AddressesModel->changeActiveAddress($user_id, $addressId);
-        if($result){
+        if ($result) {
             $this->session->setFlashdata('msg', 'Alamat berhasil diubah.');
-        }else{
+        } else {
             $this->session->setFlashdata('msg', 'Alamat gagal diubah.');
         }
         return redirect()->to(base_url() . '/checkout');
