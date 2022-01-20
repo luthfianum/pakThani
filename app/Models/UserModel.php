@@ -46,45 +46,44 @@ class UserModel extends Model
 
   public function accountVerified(int $user_id) {
     $this->db
-      ->table('users')
-      ->where('id', $user_id)
-      ->set('is_verified', 1)
-      ->update();
+        ->table('users')
+        ->where('id', $user_id)
+        ->set('is_verified', 1)
+        ->update();
   }
 
-  public function getByID(int $user_id)
-  {
+  public function getByID(int $user_id) {
     $user = $this->db
-      ->table('users')
-      ->select('email, username, no_telp, is_verified, role')
-      ->where('id', $user_id)
-      ->get()
-      ->getResult('array')[0];
+                ->table('users')
+                ->select('email, username, no_telp, is_verified, role')
+                ->where('id', $user_id)
+                ->get()
+                ->getResult('array')[0];
     
     return $user;
   }
 
   public function getVerifiedById($user_id) {
     $verified = $this->db
-      ->table('users')
-      ->select('is_verified')
-      ->where('id', $user_id)
-      ->get()
-      ->getResult('array')[0];
+                    ->table('users')
+                    ->select('is_verified')
+                    ->where('id', $user_id)
+                    ->get()
+                    ->getResult('array')[0];
 
     return $verified;
   }
 
-  public function getDetailsById($user_id)
-  {
+  public function getDetailsById($user_id) {
     $this->AddressesModel = new \App\Models\AddressesModel();
     $this->CartsModel = new \App\Models\CartsModel();
     $user = $this->db
-      ->table('users')
-      ->select('email, username, no_telp, is_verified, role')
-      ->where('id', $user_id)
-      ->get()
-      ->getResult('array')[0];
+                ->table('users')
+                ->select('email, username, no_telp, is_verified, role')
+                ->where('id', $user_id)
+                ->get()
+                ->getResult('array')[0];
+                
     $user['address'] = $this->AddressesModel->getByUserId($user_id, true)[0];
     $user['cart'] = $this->CartsModel->getIdCartActiveByUserId($user_id);
 

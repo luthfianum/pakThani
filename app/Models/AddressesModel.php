@@ -4,8 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AddressesModel extends Model
-{
+class AddressesModel extends Model {
   protected $DBGroup          = 'default';
   protected $table            = 'addresses';
   protected $primaryKey       = 'id';
@@ -40,65 +39,68 @@ class AddressesModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function getByUserId(int $userId, bool $is_active = NULL)
-  {
+  public function getByUserId(int $userId, bool $is_active = NULL) {
     $addresses = $this->db
-      ->table('addresses')
-      ->select('')
-      ->where('user_id', $userId);
+                      ->table('addresses')
+                      ->select('')
+                      ->where('user_id', $userId);
+
     if (!is_null($is_active)) {
       $addresses->where('is_active', $is_active);
     }
-    $result = $addresses->get()
-      ->getResult('array');
+
+    $result = $addresses->get()->getResult('array');
+
     return $result;
   }
 
-  public function addAddress($data)
-  {
+  public function addAddress($data) {
     $this->db->transBegin();
     $this->db
-      ->table('addresses')
-      ->where('user_id', $data['user_id'])
-      ->set('is_active', 0)
-      ->update();
+         ->table('addresses')
+         ->where('user_id', $data['user_id'])
+         ->set('is_active', 0)
+         ->update();
 
-    $address = $this->db
-      ->table('addresses')
-      ->insert($data);
+    $addresses = $this->db
+                      ->table('addresses')
+                      ->insert($data);
 
     if ($this->db->transStatus() === false) {
-      $this->db->transRollback();
+      $this->db->transRollback(); 
+
       return false;
     } else {
       $this->db->transCommit();
-      return $address;
+
+      return $addressess;
     }
 
     return $address;
   }
 
-  public function changeActiveAddress(int $user_id, int $alamatId)
-  {
+  public function changeActiveAddress(int $user_id, int $alamat_id) {
     $this->db->transBegin();
 
     $this->db
-      ->table('addresses')
-      ->where('user_id', $user_id)
-      ->set('is_active', 0)
-      ->update();
+        ->table('addresses')
+        ->where('user_id', $user_id)
+        ->set('is_active', 0)
+        ->update();
     $this->db
-      ->table('addresses')
-      ->where('id', $alamatId)
-      ->where('user_id', $user_id)
-      ->set('is_active', 1)
-      ->update();
+        ->table('addresses')
+        ->where('id', $alamat_id)
+        ->where('user_id', $user_id)
+        ->set('is_active', 1)
+        ->update();
 
     if ($this->db->transStatus() === false) {
       $this->db->transRollback();
+
       return false;
     } else {
       $this->db->transCommit();
+
       return true;
     }
   }

@@ -40,12 +40,11 @@ class PaymentTypesModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function getAll()
-  {
+  public function getAll() {
     $paymentTypes = $this->db
-      ->table('payment_types')
-      ->get()
-      ->getResult('array');
+                        ->table('payment_types')
+                        ->get()
+                        ->getResult('array');
 
     return $paymentTypes;
   }

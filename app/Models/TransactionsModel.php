@@ -40,42 +40,42 @@ class TransactionsModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function createTransaction(int $userId, int $cartId, int  $addressId, int $paymentTypeId = 1)
-  {
+  public function createTransaction(int $user_id, int $cart_id, int  $address_id, int $paymentType_id = 1) {
     $data = [
-      'user_id' => $userId,
-      'address_id' => $addressId,
-      'cart_id' => $cartId,
+      'user_id' => $user_id,
+      'address_id' => $address_id,
+      'cart_id' => $cart_id,
       'status_id' => 1,
       'delivery_cost' => 5000,
-      'payment_type_id' => $paymentTypeId,
+      'payment_type_id' => $paymentType_id,
     ];
+
     // change all cart is_active to false
     $this->db
-      ->table('carts')
-      ->set('is_active', false)
-      ->update();
+        ->table('carts')
+        ->set('is_active', false)
+        ->update();
 
     // make a new carts
     $this->db
-      ->table('carts')
-      ->set('is_active', true, false)
-      ->set('user_id', $userId, false)
-      ->insert();
+        ->table('carts')
+        ->set('is_active', true, false)
+        ->set('user_id', $user_id, false)
+        ->insert();
+
     return $this->db
-      ->table("transactions")
-      ->insert($data);
+                ->table("transactions")
+                ->insert($data);
   }
 
-  public function getByUserId($userId)
-  {
+  public function getByUserId($user_id) {
     $result = $this->db
-      ->table('transactions')
-      ->where('transactions.user_id', $userId)
-      ->join('carts', 'carts.id = transactions.cart_id')
-      ->join('transaction_status', 'transaction_status.id = transactions.status_id')
-      ->get()
-      ->getResult('array');
+            ->table('transactions')
+            ->where('transactions.user_id', $user_id)
+            ->join('carts', 'carts.id = transactions.cart_id')
+            ->join('transaction_status', 'transaction_status.id = transactions.status_id')
+            ->get()
+            ->getResult('array');
 
     return $result;
   }
