@@ -34,7 +34,6 @@ $routes->setAutoRoute(true);
 
 //GET WOI
 $routes->get('/', 'HomeController::index');
-$routes->get('/address', 'AddressController::addAddress');
 $routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/verify/(:any)', 'SignupController::verification/$1');
 $routes->get('/login', 'SigninController::index');
@@ -53,6 +52,7 @@ $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
 $routes->post('/cart', 'CartController::index');
 $routes->post('/address/(:any)', 'AddressController::updateActive/$1');
+$routes->post('/address', 'AddressController::addAddress');
 $routes->post('/checkout', 'TransactionController::checkout');
 
 /*

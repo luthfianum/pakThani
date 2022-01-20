@@ -37,29 +37,32 @@
 
                     <h2>Ubah Alamat</h2>
 
-                    <div class="input-group">
-                        <label for="address-name">Alamat</label>
-                        <input type="nama-alamat" id="nama-alamat" name="nama-alamat" placeholder="alamat">
-                    </div>
+                    <form action="<?php echo base_url(); ?>/address" method="post">
+                        <div class="input-group">
+                            <label for="address-name">Alamat</label>
+                            <input type="nama-alamat" id="nama-alamat" name="alamat" placeholder="alamat">
+                        </div>
 
-                    <div class="input-group">
-                        <label for="address">Catatan</label>
-                        <input type="catatan" id="alamat" name="alamat" placeholder="catatan">
-                    </div>
+                        <div class="input-group">
+                            <label for="address">Catatan</label>
+                            <input type="catatan" id="alamat" name="note" placeholder="catatan">
+                        </div>
 
-                    <div id="input-group">
-                        <button type="submit" value="Submit">Ubah Alamat</button>
-                    </div>
+                        <div id="input-group">
+                            <button type="submit" value="Submit">Tambah alamat</button>
+                        </div>
+                    </form>
 
                 </div>
 
             </div>
 
             <div class="detailAlamat">
-                <h2><span id="jenisLokasi"><?= $addresses[0]['note']; ?></span></h2>
+                <h2><span id="jenisLokasi"><?= $addresses['active']['note']; ?></span></h2>
                 <p><span id="nama"><?= $user['username']; ?></span></p>
-                <p><span id="alamat"><?= $addresses[0]['alamat']; ?></span></p>
+                <p><span id="alamat"><?= $addresses['active']['alamat']; ?></span></p>
             </div>
+
         </div>
         <div class="ringkasan">
             <div class="pembayaran">
