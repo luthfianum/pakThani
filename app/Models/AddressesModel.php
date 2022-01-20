@@ -40,7 +40,8 @@ class AddressesModel extends Model
   protected $beforeDelete   = [];
   protected $afterDelete    = [];
 
-  public function getByUserId(int $userId, bool $is_active = NULL) {
+  public function getByUserId(int $userId, bool $is_active = NULL)
+  {
     $addresses = $this->db
       ->table('addresses')
       ->select('')
@@ -53,40 +54,43 @@ class AddressesModel extends Model
     return $result;
   }
 
-  public function addAddress($data) {
+  public function addAddress($data)
+  {
     $this->db->transBegin();
     $this->db
-    ->table('addresses')
-    ->set('is_active', 0)
-    ->update();
-    
+      ->table('addresses')
+      ->where('user_id', $data['user_id'])
+      ->set('is_active', 0)
+      ->update();
+
     $address = $this->db
       ->table('addresses')
       ->insert($data);
 
-      if ($this->db->transStatus() === false) {
-        $this->db->transRollback();
-        return false;
-      } else {
-        $this->db->transCommit();
-        return $address;
-      }
+    if ($this->db->transStatus() === false) {
+      $this->db->transRollback();
+      return false;
+    } else {
+      $this->db->transCommit();
+      return $address;
+    }
 
     return $address;
-  } 
+  }
 
-  public function changeActiveAddress(int $userId, int $alamatId)
+  public function changeActiveAddress(int $user_id, int $alamatId)
   {
     $this->db->transBegin();
 
     $this->db
       ->table('addresses')
+      ->where('user_id', $user_id)
       ->set('is_active', 0)
       ->update();
     $this->db
       ->table('addresses')
       ->where('id', $alamatId)
-      ->where('user_id', $userId)
+      ->where('user_id', $user_id)
       ->set('is_active', 1)
       ->update();
 
