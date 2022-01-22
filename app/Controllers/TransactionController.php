@@ -11,7 +11,7 @@ class TransactionController extends BaseController
 
     if ($userId) {
       $result['addresses'] = $this->AddressesModel->getByUserId($userId) ?: [];
-      $active_address = $this->AddressesModel->getByUserId($userId, true)[0];
+      $active_address = $this->AddressesModel->getByUserId($userId, true);
       if(!empty($active_address)){
         $result['addresses']['active'] = $active_address;
       }
