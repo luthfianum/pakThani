@@ -67,7 +67,7 @@ class SignUpController extends Controller {
             $encryption = openssl_encrypt(strval($test['id']), $ciphering, $encryption_key, 0, $encryption_iv);
     
             $data = [
-                'user_id' =>$encryption,
+                'user_id' => $encryption,
             ];
 
             $email = \Config\Services::email();
@@ -79,7 +79,7 @@ class SignUpController extends Controller {
             $email->setMessage($body);
 
             if ($email->send()) {
-                return redirect()->to(base_url() . '/login');
+                return redirect()->to(base_url() . '/signin');
             } else {
                 $data = $email->printDebugger(['headers']);
                 print_r($data);
