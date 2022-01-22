@@ -19,14 +19,8 @@
     <div class="login-card flex">
         <div style="margin: 0 auto; padding: 10% 0;">
             <div class="flex" style="flex-direction: row; justify-content: space-between; align-items: center;">
-                <p style="text-align: left;">Masuk</p>
-                <a href="<?php echo base_url(); ?>"><i class="fas fa-times"></i></a>
-            </div>
-
-            <div class="wrong-input">
-                <?php if(session()->getFlashdata('msg')):?>
-                    <?= session()->getFlashdata('msg') ?></br></br>
-                <?php endif;?>
+                <p style="text-align: left;">Enter your email</p>
+                <a href="<?php echo base_url() . '/login'; ?>"><i class="fas fa-times"></i></a>
             </div>
 
             <div id="form-login">
@@ -37,24 +31,9 @@
                         <input type="email" id="email" name="email" placeholder="Email">
                     </div>
 
-                    <div class="flex">
-                        <label for="user-password">Kata Sandi</label>
-                        <input type="password" id="password" name="password" placeholder="Kata Sandi">
-                    </div>
-
-                    <a href="<?php echo base_url() . '/login20%password=forgot'; ?>">Lupa kata sandi?</a>
-
-                    <div id="btn-login">
-                        <button type="submit" value="Submit">Login</button>
-                    </div>
-
-                    <div id="pembatas-atau">
-                        <img id="atau" src="assets/LoginAlternate_atau.png" alt="">
-                    </div>
-
                     <div id="btn-daftar">
-                        <a href="<?php echo base_url(); ?>/signup">
-                            <button type="button" value="Submit">Daftar</button>
+                        <a href="<?php echo base_url(); ?>/login10%password=forgot">
+                            <button type="button" value="Submit">send</button>
                         </a>
                     </div>
                 </form>

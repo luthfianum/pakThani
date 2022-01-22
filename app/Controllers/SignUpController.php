@@ -9,7 +9,9 @@ use App\Models\CartsModel;
 class SignUpController extends Controller {  
     public function index() {
         helper(['form']);
-        $data = [];
+        $data = [ 
+            'regist' => false
+        ];
         echo view('register', $data);
     }
 
@@ -26,7 +28,11 @@ class SignUpController extends Controller {
         $isVerified = $userModel->getVerifiedById($id_int);
 
         if( $isVerified['is_verified'] == 1 ) {
-            echo view('already_verification');
+            $data = [
+                'text' => "This Account has already been activated!",
+            ];
+
+            echo view('success', $data);
         } else {
             $data = [
                 'user_id' => $id_int
@@ -42,15 +48,11 @@ class SignUpController extends Controller {
 
     public function store() {
         helper(['form']);
-        $rules = [
-            'username'        => 'required|min_length[2]|max_length[50]',
-            'email'           => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email]',
-            'password'        => 'required|min_length[4]|max_length[50]',
-            'confirmpassword' => 'matches[password]'
-        ];
+        $userModel = new UserModel();
+
+        $rules = $userModel->getRules();
 
         if ($this->validate($rules)) {
-            $userModel = new UserModel();
             $data = [
                 'username' => $this->request->getVar('username'),
                 'email'    => $this->request->getVar('email'),
@@ -79,7 +81,12 @@ class SignUpController extends Controller {
             $email->setMessage($body);
 
             if ($email->send()) {
-                return redirect()->to(base_url() . '/signin');
+                $data = [
+                    'regist' => true,
+                ];
+
+                echo view('register', $data);
+                //return redirect()->to(base_url() . '/signin');
             } else {
                 $data = $email->printDebugger(['headers']);
                 print_r($data);

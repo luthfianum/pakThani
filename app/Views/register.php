@@ -27,6 +27,9 @@
                 <?php if (isset($validation)) : ?>
                     <?= $validation->listErrors() ?>
                 <?php endif; ?>
+                <?php if ($regist == true) {
+                        echo "<script> alert('Verification link has been send to your email') </script>";
+                } ?>
             </div>
 
             <div id="form-signup">
@@ -62,7 +65,7 @@
 
                     <div id="btn-kembali">
                         <a href="<?php echo base_url(); ?>/login">
-                            <button type="button" value="Submit">Kembali</button>
+                            <button type="button" value="Submit">Login</button>
                         </a>
                     </div>
                 </form>
