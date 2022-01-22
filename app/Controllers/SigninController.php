@@ -8,9 +8,12 @@ use App\Models\UserModel;
 class SigninController extends Controller {
     public $session;
 
-    public function index() {
+    public function index($regist = 0) {
         helper(['form']);
-        echo view('loginAlternate');
+
+        $data = [ 'regist' => $regist ];
+
+        echo view('loginAlternate', $data);
     }
 
     public function loginAuth() {

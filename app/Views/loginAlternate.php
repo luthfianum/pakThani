@@ -60,8 +60,15 @@
                 </form>
             </div>
         </div>
-
     </div>
+
+    <?php {
+        if ($regist == 1) {
+            echo "<script>
+                    alert('Verification link has been send to your email')
+                </script>";
+        }
+    }?>
 </body>
 
 </html>
