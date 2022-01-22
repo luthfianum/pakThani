@@ -11,7 +11,10 @@ class TransactionController extends BaseController
 
     if ($userId) {
       $result['addresses'] = $this->AddressesModel->getByUserId($userId) ?: [];
-      $result['addresses']['active'] = $this->AddressesModel->getByUserId($userId, true)[0] ?: [];
+      $active_address = $this->AddressesModel->getByUserId($userId, true)[0];
+      if(!empty($active_address)){
+        $result['addresses']['active'] = $active_address;
+      }
       $result['cart'] = $this->CartsModel->getByUserId($userId);
       $result['payment_method'] = $this->PaymentTypesModel->getAll();
       $result['user'] = $this->UserModel->getById($userId);

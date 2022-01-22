@@ -58,9 +58,11 @@
             </div>
 
             <div class="detailAlamat">
-                <h2><span id="jenisLokasi"><?= $addresses['active']['note']; ?></span></h2>
-                <p><span id="nama"><?= $user['username']; ?></span></p>
-                <p><span id="alamat"><?= $addresses['active']['alamat']; ?></span></p>
+                <?php if (isset($addresses['active'])) : ?>
+                    <h2><span id="jenisLokasi"><?= $addresses['active']['note']; ?></span></h2>
+                    <p><span id="nama"><?= $user['username']; ?></span></p>
+                    <p><span id="alamat"><?= $addresses['active']['alamat']; ?></span></p>
+                <?php endif; ?>
             </div>
 
         </div>
@@ -80,11 +82,19 @@
                     <h3>Total Tagihan</h3>
                     <h3>Rp <span id="totalTagihan"></span></h3>
                 </div>
-                <div class="button">
-                    <form action="<?= base_url(); ?>/checkout" method="post">
-                        <input class="buttonBayar" type="submit" value="Payment">
-                    </form>
-                </div>
+                <?php if (isset($addresses['active'])) : ?>
+                    <div class="button">
+                        <form action="<?= base_url(); ?>/checkout" method="post">
+                            <input class="buttonBayar" type="submit" value="Payment">
+                        </form>
+                    </div>
+                <?php else : ?>
+                    <div class="button">
+                        <form action="<?= base_url(); ?>/checkout" method="post">
+                            <input class="buttonBayar" type="submit" value="Payment" disabled>
+                        </form>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ button {
   color: #000000;
   text-decoration: none;
 }
+
 .div1 {
   width: 69px;
   height: 26px;
@@ -34,6 +35,8 @@ button {
 
 .nav_links {
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 nav {
@@ -64,9 +67,6 @@ nav {
   transition: all 0.3s ease 0s;
 }
 
-.nav_links li a:hover {
-}
-
 button {
   display: flex;
   flex-direction: row;
@@ -77,7 +77,6 @@ button {
   float: right;
   width: 189px;
   height: 44px;
-
   float: right;
 }
 
@@ -141,11 +140,9 @@ button:hover {
 
 .buttonKeranjang {
   align-items: center;
-  vertical-align: center;
+  display: flex;
   border: solid 1px;
-  padding: 5px;
-  width: fit-content;
-  height: fit-content;
+  padding: 6px;
   align-content: center;
   border-radius: 5px;
   cursor: pointer;
@@ -154,27 +151,23 @@ button:hover {
 
 .buttonListTransaksi {
   align-items: center;
-  vertical-align: center;
+  display: flex;
   border: solid 1px;
-  padding: 5px;
+  padding: 6px;
   align-content: center;
   border-radius: 5px;
   cursor: pointer;
-  width: fit-content;
-  height: fit-content;
   margin: 10px;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-top: 15px;
 }
 
 .dropdown-button {
   position: relative;
   display: inline-block;
-  margin-top: 15px;
 }
 
 .dropdown-content {
@@ -192,25 +185,27 @@ button:hover {
   text-decoration: none;
   display: block;
 }
+
 .dropdown-content a:hover {
   color: #000000;
-
-  border-radius: 10px;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
   cursor: pointer;
 }
+
 .dropdown-button:hover .dropdown-content {
   display: block;
   cursor: pointer;
 }
+
 .alamat:hover {
   background-color: rgba(247, 209, 0, 0.45);
   border-radius: 10px 10px 0 0;
 }
+
 .logout:hover {
   background-color: #ed3434;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
