@@ -82,7 +82,7 @@
                     <h3>Total Tagihan</h3>
                     <h3>Rp <span id="totalTagihan"></span></h3>
                 </div>
-                <?php if (isset($addresses['active'])) : ?>
+                <?php if (isset($addresses['active']) && isset($cart['cartDetails'][0])) : ?>
                     <div class="button">
                         <form action="<?= base_url(); ?>/checkout" method="post">
                             <input class="buttonBayar" type="submit" value="Payment">
