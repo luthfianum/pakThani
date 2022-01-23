@@ -74,6 +74,9 @@
 
   cursor: pointer;
 }
+.buttonBayar:disabled{
+  background-color: rgba(247, 209, 0, 0.5);
+}
 
 .pembayaran .button {
   text-align: center;
