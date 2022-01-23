@@ -17,14 +17,14 @@ class SignUpController extends Controller {
 
     public function verification($id) {
         helper(['form']);
-        
+        $userModel = new UserModel();
+
         $encryption_iv = '13112000qwerplmo';
         $encryption_key = "PakThani";
         $ciphering = "AES-128-CTR";
-        $id_string = openssl_decrypt($id, $ciphering, $encryption_key, 0, $encryption_iv);
+        $id_string = $userModel->decryptID($id);
         $id_int = (int)$id_string;
 
-        $userModel = new UserModel();
         $isVerified = $userModel->getVerifiedById($id_int);
 
         if( $isVerified['is_verified'] == 1 ) {
@@ -61,15 +61,9 @@ class SignUpController extends Controller {
 
             $userModel->save($data);
             $test = $userModel->where('email', $this->request->getVar('email'))->first();
-
-            $encryption_iv = '13112000qwerplmo';
-            $encryption_key = "PakThani";
-            $ciphering = "AES-128-CTR";
-            $iv_length = openssl_cipher_iv_length($ciphering);
-            $encryption = openssl_encrypt(strval($test['id']), $ciphering, $encryption_key, 0, $encryption_iv);
     
             $data = [
-                'user_id' => $encryption,
+                'user_id' => $userModel->encryptID($test['id']),
             ];
 
             $email = \Config\Services::email();

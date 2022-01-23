@@ -100,4 +100,23 @@ class UserModel extends Model
 
     return $rules;
   }
+
+  public function encryptID($id) {
+    $encryption_iv = '13112000qwerplmo';
+    $encryption_key = "PakThani";
+    $ciphering = "AES-128-CTR";
+    $iv_length = openssl_cipher_iv_length($ciphering);
+    $encryption = openssl_encrypt(strval($id), $ciphering, $encryption_key, 0, $encryption_iv);
+
+    return $encryption;
+  }
+
+  public function decryptID($id) {
+    $encryption_iv = '13112000qwerplmo';
+    $encryption_key = "PakThani";
+    $ciphering = "AES-128-CTR";
+    $id_string = openssl_decrypt($id, $ciphering, $encryption_key, 0, $encryption_iv);
+
+    return $id_string;
+  }
 }
