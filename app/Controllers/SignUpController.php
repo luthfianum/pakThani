@@ -19,9 +19,6 @@ class SignUpController extends Controller {
         helper(['form']);
         $userModel = new UserModel();
 
-        $encryption_iv = '13112000qwerplmo';
-        $encryption_key = "PakThani";
-        $ciphering = "AES-128-CTR";
         $id_string = $userModel->decryptID($id);
         $id_int = (int)$id_string;
 
@@ -69,6 +66,7 @@ class SignUpController extends Controller {
             $email = \Config\Services::email();
             $to = $this->request->getVar('email');
             $body = view('email_verification', $data);
+
             $email->setTo($to);
             $email->setFrom('ini2dummy@gmail.com', 'Confirm Registration');
             $email->setSubject('Pak Thani Registration');
@@ -87,6 +85,7 @@ class SignUpController extends Controller {
             }
         } else {
             $data['validation'] = $this->validator;
+            $data['regist'] = false;
             echo view('register', $data);
         }
     }

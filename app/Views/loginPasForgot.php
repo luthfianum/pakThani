@@ -23,18 +23,25 @@
                 <a href="<?php echo base_url() . '/login'; ?>"><i class="fas fa-times"></i></a>
             </div>
 
-            <div id="form-login">
-                <form class="flex" action="<?php echo base_url(); ?>/login" method="post">
+            <div class="wrong-input">
+                <?php if(session()->getFlashdata('msg')):?>
+                    <?= session()->getFlashdata('msg') ?></br></br>
+                <?php endif;?>
+                <?php if ($send == true) {
+                        echo "<script> alert('Link to edit password has been send to your email!') </script>";
+                } ?>
+            </div>
 
-                    <div class="flex" >
+            <div id="form-signup">
+                <form action="<?php echo base_url(); ?>/login_password=forgot" method="post">  
+                
+                    <div class="flex">
                         <label for="user-email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email">
                     </div>
 
-                    <div id="btn-daftar">
-                        <a href="<?php echo base_url(); ?>/login10%password=forgot">
-                            <button type="button" value="Submit">send</button>
-                        </a>
+                    <div id="btn-signup">
+                        <button type="submit" value="Submit">Send</button>
                     </div>
                 </form>
             </div>

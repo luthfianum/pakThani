@@ -63,6 +63,14 @@ class UserModel extends Model
     return $user;
   }
 
+  public function changePassword(int $user_id, $new_password) {
+    $this->db
+        ->table('users')
+        ->where('id', $user_id)
+        ->set('password', $new_password)
+        ->update();
+  }
+
   public function getVerifiedById($user_id) {
     $verified = $this->db
                     ->table('users')

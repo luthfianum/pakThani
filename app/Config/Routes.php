@@ -38,8 +38,8 @@ $routes->get('/category/(:any)', 'CategoryController::index/$1');
 $routes->get('/verify/(:any)', 'SignupController::verification/$1');
 $routes->get('/test', 'PasswordController::send');
 $routes->get('/login', 'SigninController::index');
-$routes->get('/login20%password=forgot', 'PasswordController::index');
-$routes->get('/login10%password=forgot', 'PasswordController::send');
+$routes->get('/login_password=forgot', 'PasswordController::index');
+$routes->get('/edit_password/(:any)', 'PasswordController::showEditPasswordPage/$1');
 $routes->get('/signup', 'SignupController::index');
 $routes->get('/logout', 'SigninController::out');
 $routes->get('/profile', 'ProfileController::index', ['filter' => 'authGuard']);
@@ -51,6 +51,8 @@ $routes->get('/verificationSucceed', 'VerificationController::succeed');
 $routes->get('search/(:any)', 'SearchController::index/$1');
 
 //INI POST YAAA!
+$routes->post('/login_password=forgot', 'PasswordController::send');
+$routes->post('/edit=success/(:any)', 'PasswordController::editPassword/$1');
 $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
 $routes->post('/cart', 'CartController::index');

@@ -42,7 +42,7 @@
                         <input type="password" id="password" name="password" placeholder="Kata Sandi">
                     </div>
 
-                    <a href="<?php echo base_url() . '/login20%password=forgot'; ?>">Lupa kata sandi?</a>
+                    <a href="<?php echo base_url() . '/login_password=forgot'; ?>">Lupa kata sandi?</a>
 
                     <div id="btn-login">
                         <button type="submit" value="Submit">Login</button>

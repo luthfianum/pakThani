@@ -110,7 +110,7 @@
             </div>
 
             <div id="btn-verify">
-                <a href="<?php echo base_url() . '/verify/' . $this->data['user_id']; ?>">
+                <a href="<?php echo base_url() . '/edit_password/' . $this->data['user_id']; ?>">
                     <button type="button" value="Submit">Change Your Password</button>
                 </a>
             </div>
