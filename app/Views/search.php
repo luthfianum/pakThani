@@ -35,9 +35,9 @@ $item = $data['items'];
                     <p><span id="price">Rp <?= $d['variant'][0]['price']; ?></span><span id="variant">/<?= $d['variant'][0]['name']; ?></span> </p>
                 </div>
                 <div class="beliContainer">
-                    <button class="beliButton" onClick="updateData()">
+                    <a class="beliButton button" href="<?php echo base_url(); ?>/item/<?php echo $d['slug']; ?>">
                         beli
-                    </button>
+                    </a>
                 </div>
 
             </div>

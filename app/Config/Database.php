@@ -25,11 +25,14 @@ class Database extends Config
      */
     public $defaultGroup = 'default';
 
+    //Add this to fetch the CLEARDB_DATABASE_URL
+
     /**
      * The default database connection.
      *
      * @var array
      */
+    public $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
@@ -48,6 +51,8 @@ class Database extends Config
         'strictOn' => false,
         'failover' => [],
         'port'     => 3306,
+
+
     ];
 
     /**
