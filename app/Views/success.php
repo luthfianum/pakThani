@@ -19,7 +19,7 @@
             </div>
 
             <div id="pembuka">
-                <p id="teks-pembuka">This Account has already been activated!</p>
+                <p id="teks-pembuka"><?php echo $text; ?></p>
             </div>
 
             <div id="btn-return">

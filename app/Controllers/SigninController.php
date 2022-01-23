@@ -10,7 +10,8 @@ class SigninController extends Controller {
 
     public function index() {
         helper(['form']);
-        echo view('loginAlternate');
+        $data = [];
+        echo view('loginAlternate', $data);
     }
 
     public function loginAuth() {
