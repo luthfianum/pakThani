@@ -93,9 +93,9 @@
                   <span class="close2">&times;</span>
                   <h4>Pembayaran</h4>
                   <h4>Metode Pembayaran</h4>
-                  
+
                   <div>
-                    <?php foreach ($payment_method as $id=>$payment) : ?>
+                    <?php foreach ($payment_method as $id => $payment) : ?>
                       <div class="metode">
                         <label class="varians hover" for="cod" id="label" onclick="radio()"> <img src="<?= $payment['img'] ?>"> <?= $payment['payment_type'] ?> </label>
                         <input type="radio" id="payment_method-<?= $payment['id'] ?> " name="payment_method" value="<?= $payment['id'] ?>">
@@ -107,36 +107,38 @@
                     <h3>Ringkasan Pembayaran</h3>
                     <div class="total">
                       <h4>Total Harga</h4>
-                      <h4>Rp </h4>
+                      <h4>Rp <span id="totalHarga"><?= $cart['total']; ?></span></h4>
                     </div>
                     <div class="total">
                       <h4>Total Ongkos Kirim</h4>
-                      <h4>Rp 2.000</h4>
+                      <h4>Rp <span id="totalOngkir"><?= $cart['total']; ?></span></h4>
                     </div>
                     <hr>
                     <div class="total">
-                      <h3>Total Tagihan</h3>
-                      <h3>Rp 47.000</h3>
+                      <h4>Total Tagihan</h4>
+                      <h4>Rp <span id="totalTagihan"><?= $cart['total']*2; ?></span></h4>
                     </div>
                     <hr>
                   </div>
-                  <div class="lanjutkan">
-                    <div class="button">
-                      <button type="submit">
-                        <h3>Lanjutkan</h3>
-                      </button>
-                    </div>
-                  </div>
+                  <hr>
+              </div>
+              <div class="lanjutkan">
+                <div class="button">
+                  <button type="submit">
+                    <h3>Lanjutkan</h3>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        <?php else : ?>
-          <div class="button">
-          <button class="buttonBayar" type="submit" id="btn-pembayaran" value="Payment" disabled>Payment</button>
-          </div>
-        <?php endif; ?>
       </div>
+    <?php else : ?>
+      <div class="button">
+        <button class="buttonBayar" type="submit" id="btn-pembayaran" value="Payment" disabled>Payment</button>
+      </div>
+    <?php endif; ?>
     </div>
+  </div>
   </div>
 
   <div class="container3">
