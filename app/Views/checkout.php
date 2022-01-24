@@ -108,7 +108,7 @@
                         <img src="<?= $cartD['image']; ?>">
                         <div>
                             <h3><?= $cartD['item_name']; ?></h3>
-                            <h3><span id="cartitem_price"><?= $cartD['price']; ?></span><span id='slash'> / </span><span id="cartitem_variant"></span><?= $cartD['variant']; ?></h3>
+                            <h3><span id="cartitem_price">Rp. <?= $cartD['price']; ?></span><span id='slash'> / </span><span id="cartitem_variant"></span><?= $cartD['variant']; ?></h3>
                         </div>
                     </div>
                     <div class="jumlah cf">
