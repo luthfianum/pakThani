@@ -84,15 +84,55 @@
                 </div>
                 <?php if (isset($addresses['active']) && isset($cart['cartDetails'][0])) : ?>
                     <div class="button">
-                        <form action="<?= base_url(); ?>/checkout" method="post">
+                        <!-- <form action="/checkout" method="post">
                             <input class="buttonBayar" type="submit" value="Payment">
-                        </form>
+                        </form> -->
+                        <button class="buttonBayar" type="submit" id="btn-pembayaran" value="Payment">Payment</button>
+                            <div id="modal-payment" class="modal2">
+                                <div class="modal-content2">
+                                    <span class="close2">&times;</span><h4>Pembayaran</h4>                
+                                    <h4>Metode Pembayaran</h4>
+                                    <div>
+                                        <div class="metode">
+                                            <label class="varians hover" for="cod" id="label"  onclick="radio()"> <img src="/assets/cod.png"> COD (Cash On Delivery)</label>
+                                            <input type="radio" id="cod" name="cod" value="cod">
+                                        </div>
+                                        <div class="metode">
+                                            <label class="varians hover" for="cod" id="label"  onclick="radio()"> <img src="/assets/cod.png"> COD (Cash On Delivery)</label>
+                                            <input type="radio" id="cod" name="cod" value="cod">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="pembayaran">
+                                        <h3>Ringkasan Pembayaran</h3>
+                                        <div class="total">
+                                            <h4>Total Harga</h4>
+                                            <h4>Rp 45.000</h4>
+                                        </div>
+                                        <div class="total">
+                                            <h4>Total Ongkos Kirim</h4>
+                                            <h4>Rp 2.000</h4>
+                                        </div>
+                                        <hr>
+                                        <div class="total">
+                                            <h3>Total Tagihan</h3>
+                                            <h3>Rp 47.000</h3>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="lanjutkan">
+                                        <div class="button">
+                                            <button type="submit"><h3>Lanjutkan</h3></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 <?php else : ?>
                     <div class="button">
-                        <form action="<?= base_url(); ?>/checkout" method="post">
-                            <input class="buttonBayar" type="submit" value="Payment" disabled>
-                        </form>
+                        <!-- <form action="/checkout" method="post"> -->
+                            
+                                <!-- </form> -->
                     </div>
                 <?php endif; ?>
             </div>
@@ -164,6 +204,25 @@
                 window.onclick = function(event) {
                     if (event.target == modal) {
                         modal.style.display = "none";
+                    }
+                }
+            </script>
+            <script>
+                var modal2 = document.getElementById("modal-payment");
+                var btn2 = document.getElementById("btn-pembayaran");
+                var span2 = document.getElementsByClassName("close2")[0];
+
+                btn2.onclick = function() {
+                    modal2.style.display = "block";
+                }
+
+                span2.onclick = function() {
+                    modal2.style.display = "none";
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal2) {
+                        modal2.style.display = "none";
                     }
                 }
             </script>
