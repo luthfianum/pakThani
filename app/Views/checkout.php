@@ -97,26 +97,22 @@
                                             <label class="varians hover" for="cod" id="label"  onclick="radio()"> <img src="/assets/cod.png"> COD (Cash On Delivery)</label>
                                             <input type="radio" id="cod" name="cod" value="cod">
                                         </div>
-                                        <div class="metode">
-                                            <label class="varians hover" for="cod" id="label"  onclick="radio()"> <img src="/assets/cod.png"> COD (Cash On Delivery)</label>
-                                            <input type="radio" id="cod" name="cod" value="cod">
-                                        </div>
                                     </div>
                                     <hr>
                                     <div class="pembayaran">
                                         <h3>Ringkasan Pembayaran</h3>
                                         <div class="total">
                                             <h4>Total Harga</h4>
-                                            <h4>Rp 45.000</h4>
+                                            <h4>Rp <span id="totalHarga"><?= $cart['total']; ?></span></h4>
                                         </div>
                                         <div class="total">
                                             <h4>Total Ongkos Kirim</h4>
-                                            <h4>Rp 2.000</h4>
+                                            <h4>Rp <span id="totalOngkir"><?= $cart['total']; ?></span></h4>
                                         </div>
                                         <hr>
                                         <div class="total">
-                                            <h3>Total Tagihan</h3>
-                                            <h3>Rp 47.000</h3>
+                                            <h4>Total Tagihan</h4>
+                                            <h4>Rp <span id="totalTagihan"></span></h4>
                                         </div>
                                         <hr>
                                     </div>
