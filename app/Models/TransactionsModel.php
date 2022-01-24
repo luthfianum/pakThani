@@ -71,9 +71,11 @@ class TransactionsModel extends Model
   public function getByUserId($user_id) {
     $result = $this->db
             ->table('transactions')
+            ->select('transactions.id as id, address_id, cart_id, delivery_cost, transactions.created_at, status, payment_type')
             ->where('transactions.user_id', $user_id)
             ->join('carts', 'carts.id = transactions.cart_id')
             ->join('transaction_status', 'transaction_status.id = transactions.status_id')
+            ->join('payment_types', 'payment_types.id = transactions.payment_type_id')
             ->get()
             ->getResult('array');
 
