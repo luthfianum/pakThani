@@ -60,18 +60,20 @@ class CartDetailsModel extends Model
                             ->get()
                             ->getResult('array');
         
-        if(empty($item_in_cart)) {
-            $this->db
-                ->table("cart_details")
-                ->insert($data);    
-        } else {   
-            $quantity += $item_in_cart[0]['quantity'];
+        if($data['quantity'] > 0) {                            
+            if(empty($item_in_cart)) {
+                $this->db
+                    ->table("cart_details")
+                    ->insert($data);    
+            } else {   
+                $quantity += $item_in_cart[0]['quantity'];
 
-            $this->db
-                ->table("cart_details")
-                ->set('quantity', $quantity)
-                ->where($item)
-                ->update();
+                $this->db
+                    ->table("cart_details")
+                    ->set('quantity', $quantity)
+                    ->where($item)
+                    ->update();
+            }
         }
     }
 }

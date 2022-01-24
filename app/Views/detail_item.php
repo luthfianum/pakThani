@@ -53,7 +53,7 @@
                         <?php foreach ($item['variant'] as $varian) : ?>
                             <input type="radio" id="<?= $varian['id'] ?>" name="varian" value="<?= $varian['id'] ?>">
                             <label for="<?= $varian['id'] ?>"  
-                                onclick='radio(<?= '"'.$varian['price'].'","'.$varian['name'].'"' ?>)'>
+                                onclick='radio(<?= '"'.$varian['price'].'","'.$varian['name'].'","'.$varian['id'].'"' ?>)'>
                             <?= $varian['name'] ?></label>
                         <?php endforeach; ?>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="beli">
                         <form action="<?php echo base_url(); ?>/cart" method="post">
                             <input type="hidden" name="quantity" value="1" id="qty">
-                            <input type="hidden" name="variantID" value="<?= end($item['variant'])['id']; ?>" id="var">
+                            <input type="hidden" name="variantID" value="<?= $item['variant'][0]['id']; ?>" id="var">
                             <input type="submit" value="Beli" id="beli">
                         </form>
                     </div>
@@ -77,14 +77,14 @@
         document.getElementById('<?=$item['variant'][0]['id']?>').checked = true;
         function increment() {
             document.getElementById('demoInput').stepUp();
-            document.getElementById('qty').stepUp();
+            document.getElementById('qty').value = document.getElementById('demoInput').value;
         }
         function decrement() {
             document.getElementById('demoInput').stepDown();
-            document.getElementById('qty').stepDown();
+            document.getElementById('qty').value = document.getElementById('demoInput').value;
         }
 
-        function radio(price, variant) {
+        function radio(price, variant, id) {
             let vars = document.getElementsByClassName("varians");
             for (let i = 0; i < vars.length; i++) {
                 vars[i].classList.remove("hover");
@@ -97,6 +97,7 @@
             let pricePlace = document.getElementById("detailitem_price");
             let variantPlace = document.getElementById("detailitem_variant");
 
+            idPlace.value = id;
             pricePlace.innerText = price;
             variantPlace.innerText = variant;
         }
