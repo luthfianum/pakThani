@@ -30,6 +30,7 @@ class TransactionController extends BaseController
     $userId = $this->session->get('id');
     if ($userId) {
       $items = $this->request->getPost('items');
+      $payment_method = $this->request->getPost('payment_method');
       $this->db->transBegin();
       $user = $this->UserModel->getDetailsById($userId);
       $cartId = $user['cart']['id'];
@@ -38,7 +39,7 @@ class TransactionController extends BaseController
         $int_variant_id = $variant_id;
         $this->CartDetailsModel->checkItemInCart($cartId, (int)$quantity, $variant_id);
       }
-      $transaction = $this->TransactionsModel->createTransaction($userId, $cartId, $addressesId);
+      $transaction = $this->TransactionsModel->createTransaction($userId, $cartId, $addressesId, $payment_method);
       if ($this->db->transStatus() === false) {
         $this->db->transRollback();
         $this->session->setFlashdata('msg', 'Transaksi Gagal Dibuat');
