@@ -207,7 +207,7 @@
   border: 5px solid rgba(245, 245, 245, 0.5);
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.41);
   width: 350px;
-  height: 500px;
+  height: 510px;
   margin: 30px auto;
 }
 
@@ -259,7 +259,7 @@
 .modal2 .pembayaran {
   border: none;
   box-shadow: none;
-  margin-top: 0px;
+  line-height: 0px;
 }
 
 .lanjutkan {
