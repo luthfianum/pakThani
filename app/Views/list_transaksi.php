@@ -28,7 +28,8 @@
             </a>
         </div>
         <div class="status cf">
-            <ul><div>Status</div>
+            <ul>
+                <div>Status</div>
                 <li class="active" onclick="list('')">Semua</li>
                 <li onclick="list('Berlangsung')">Berlangsung</li>
                 <li onclick="list('Selesai')">Selesai</li>
@@ -36,35 +37,33 @@
         </div>
         <div id="list_transaksi">
             <?php foreach ($transactions as $transaksi) : ?>
-            <div class="listTransaksi">
-                <div class="tanggal">
-                    <h4>Belanja <span><?= $transaksi['created_at'] ?></span></h4>
-                </div>
-                <div class="atas">
-                    <div class="barang cf">
-                        <img src="<?= $transaksi['cart']['cartDetails'][0]['image'] ?>">
-                        <div>
-                            <h3><?= $transaksi['cart']['cartDetails'][0]['item_name'] ?></h3>
-                            <h4>Varian : <?= $transaksi['cart']['cartDetails'][0]['variant'] ?></h4>
+                <div class="listTransaksi">
+                    <div class="tanggal">
+                        <h4>Belanja <span><?= $transaksi['created_at'] ?></span></h4>
+                    </div>
+                    <div class="atas">
+                        <div class="barang cf">
+                            <img src="<?= $transaksi['cart']['cartDetails'][0]['image'] ?>">
+                            <div>
+                                <h3><?= $transaksi['cart']['cartDetails'][0]['item_name'] ?></h3>
+                                <h4>Varian : <?= $transaksi['cart']['cartDetails'][0]['variant'] ?></h4>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <hr>
+                            <div>
+                                <h4>Total Belanja</h4>
+                                <h4 class="harga"><?= $transaksi['cart']['total'] ?></h4>
+                            </div>
                         </div>
                     </div>
-                    <div class="total">
-                        <hr>
-                        <div>
-                            <h4>Total Belanja</h4>
-                            <h4 class="harga"><?= $transaksi['cart']['total'] ?></h4>
+                    <div class="bawah">
+                        <div class="statusTransaksi">
+                            <h4>Status : <span><?= $transaksi['status'] ?></span></h4>
                         </div>
+
                     </div>
                 </div>
-                <div class="bawah">
-                    <div class="statusTransaksi">
-                        <h4>Status : <span><?= $transaksi['status']?></span></h4>
-                    </div>
-                    <div class="detailTransaksi">
-                        <button>Detail Transaksi</button>
-                    </div>
-                </div>
-            </div>
             <?php endforeach; ?>
         </div>
     </div>
@@ -72,18 +71,17 @@
     <script>
         function list(status) {
             let listtransaksi = document.querySelectorAll(".listTransaksi");
-           for (const transaksi of listtransaksi) {
-            let flag = transaksi.outerHTML.includes(status)
+            for (const transaksi of listtransaksi) {
+                let flag = transaksi.outerHTML.includes(status)
                 console.log(flag)
-                if (!flag){
+                if (!flag) {
                     transaksi.classList.add('hidden')
-                }
-                else{
+                } else {
                     transaksi.classList.remove('hidden')
                 }
-               
-           }
-           let li = document.getElementsByTagName("li");
+
+            }
+            let li = document.getElementsByTagName("li");
             for (let i = 0; i < li.length; i++) {
                 li[i].classList.remove("active");
                 li[i].addEventListener("click", function() {
@@ -92,7 +90,7 @@
             }
         }
     </script>
-</body> 
+</body>
 
 <?= $this->endSection(); ?>
 

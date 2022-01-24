@@ -32,7 +32,7 @@ class Database extends Config
      *
      * @var array
      */
-    public $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
