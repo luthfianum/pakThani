@@ -52,7 +52,6 @@ $username = $user['username'];
                 <button class="dropbtn" style="cursor: pointer;"><?= $username; ?> </button>
                 <div class="dropdown-content" style="margin-top:45px; margin-left:30px">
                     <a class="logout" href="<?php echo base_url(); ?>/logout" style="display: flex; align-items:center"> Logout</a>
-
                 </div>
             </div>
         </li>
