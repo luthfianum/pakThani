@@ -120,14 +120,13 @@
                     </div>
                     <hr>
                   </div>
-                  <hr>
-              </div>
-              <div class="lanjutkan">
-                <div class="button">
-                  <button type="submit">
-                    <h3>Lanjutkan</h3>
-                  </button>
-                </div>
+                  <div class="lanjutkan">
+                    <div class="button">
+                      <button type="submit">
+                        <h3>Lanjutkan</h3>
+                      </button>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
