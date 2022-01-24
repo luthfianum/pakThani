@@ -8,7 +8,6 @@ use App\Models\CartsModel;
 
 class PasswordController extends Controller {  
     public function index() {
-        helper(['form']);
         $data = [
             'send' => false
         ];
@@ -19,7 +18,6 @@ class PasswordController extends Controller {
     public function showEditPasswordPage($id) {
         $data = [ 'id' => $id ];
         
-        helper(['form']);
         echo view('edit_password', $data);
     }
 

@@ -8,7 +8,6 @@ use App\Models\CartsModel;
 
 class SignUpController extends Controller {  
     public function index() {
-        helper(['form']);
         $data = [ 
             'regist' => false
         ];
@@ -16,7 +15,6 @@ class SignUpController extends Controller {
     }
 
     public function verification($id) {
-        helper(['form']);
         $userModel = new UserModel();
 
         $id_string = $userModel->decryptID($id);
@@ -44,7 +42,6 @@ class SignUpController extends Controller {
     }
 
     public function store() {
-        helper(['form']);
         $userModel = new UserModel();
 
         $rules = $userModel->getRules();
