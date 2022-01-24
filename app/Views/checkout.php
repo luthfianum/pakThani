@@ -85,12 +85,18 @@
                 <?php if (isset($addresses['active']) && isset($cart['cartDetails'][0])) : ?>
                     <div class="button">
                         <form action="<?= base_url(); ?>/checkout" method="post">
+                            <?php foreach ($cart['cartDetails'] as $cartD) : ?>
+                                <input type="number" min="0" id="input-<?= $cartD['variant_id']; ?>" name="items[<?= $cartD['variant_id']; ?>]" value="<?= $cartD['quantity']; ?>" hidden>
+                            <?php endforeach; ?>
                             <input class="buttonBayar" type="submit" value="Payment">
                         </form>
                     </div>
                 <?php else : ?>
                     <div class="button">
                         <form action="<?= base_url(); ?>/checkout" method="post">
+                            <?php foreach ($cart['cartDetails'] as $cartD) : ?>
+                                <input type="number" min="0"  id="input-<?= $cartD['variant_id']; ?>" name="items[<?= $cartD['variant_id']; ?>]" value="<?= $cartD['quantity']; ?>" hidden>
+                            <?php endforeach; ?>
                             <input class="buttonBayar" type="submit" value="Payment" disabled>
                         </form>
                     </div>
@@ -103,7 +109,7 @@
         <h2>Detail Pesanan</h2>
         <div class="detail">
             <?php foreach ($cart['cartDetails'] as $cartD) : ?>
-                <div class="detailPesanan">
+                <div class="detailPesanan" id="detail-<?= $cartD['variant_id']; ?>">
                     <div class="item cf">
                         <img src="<?= $cartD['image']; ?>">
                         <div>
@@ -113,12 +119,12 @@
                     </div>
                     <div class="jumlah cf">
                         <div class="delete">
-                            <button type="button" class="danger">Delete</button>
+                            <button type="button" class="danger" onclick="deleteItem(<?= $cartD['variant_id']; ?>)">Delete</button>
                         </div>
                         <div class="plusminus">
-                            <a onclick="decrement()"><img src="/assets/minus.png"></a>
-                            <input id=demoInput type=number min=0 max=110 value="<?= $cartD['quantity']; ?>">
-                            <a onclick="increment()"><img src="/assets/tambah.png"></a>
+                            <a onclick="decrement(<?= $cartD['variant_id']; ?>)"><img src="/assets/minus.png"></a>
+                            <input id='demoInput-<?= $cartD['variant_id']; ?>' type='number' min='0' max='110' value="<?= $cartD['quantity']; ?>">
+                            <a onclick="increment(<?= $cartD['variant_id']; ?>)"><img src="/assets/tambah.png"></a>
                         </div>
                     </div>
                 </div>
@@ -127,13 +133,20 @@
             <script>
                 hitungTagihan();
 
-                function increment() {
-                    document.getElementById('demoInput').stepUp();
-
+                function increment(id) {
+                    document.getElementById(`demoInput-${id}`).stepUp();
+                    document.getElementById(`input-${id}`).stepUp();
                 }
 
-                function decrement() {
-                    document.getElementById('demoInput').stepDown();
+                function decrement(id) {
+                    document.getElementById(`demoInput-${id}`).stepDown();
+                    document.getElementById(`input-${id}`).stepDown();
+                }
+
+                function deleteItem(id){
+                    document.getElementById(`demoInput-${id}`).value = 0;
+                    document.getElementById(`input-${id}`).value = 0;
+                    document.getElementById(`detail-${id}`).style.display = "none";;
                 }
 
                 function hitungTagihan() {
@@ -141,14 +154,6 @@
                 }
             </script>
             <script>
-                function increment() {
-                    document.getElementById('demoInput').stepUp();
-                }
-
-                function decrement() {
-                    document.getElementById('demoInput').stepDown();
-                }
-
                 var modal = document.getElementById("modal-container");
                 var btn = document.getElementById("btn-alamat");
                 var span = document.getElementsByClassName("close")[0];

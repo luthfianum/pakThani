@@ -28,14 +28,17 @@ class TransactionController extends BaseController
   public function checkout()
   {
     $userId = $this->session->get('id');
-
     if ($userId) {
+      $items = $this->request->getPost('items');
       $this->db->transBegin();
       $user = $this->UserModel->getDetailsById($userId);
       $cartId = $user['cart']['id'];
       $addressesId = $user['address']['id'];
+      foreach ($items as $variant_id => $quantity) {
+        $int_variant_id = $variant_id;
+        $this->CartDetailsModel->checkItemInCart($cartId, (int)$quantity, $variant_id);
+      }
       $transaction = $this->TransactionsModel->createTransaction($userId, $cartId, $addressesId);
-
       if ($this->db->transStatus() === false) {
         $this->db->transRollback();
         $this->session->setFlashdata('msg', 'Transaksi Gagal Dibuat');
