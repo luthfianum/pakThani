@@ -185,7 +185,7 @@ $buah = $item['buah'];
     <div class="anekaBuah">
         <div class="anekaBuahText" style="display: flex; justify-content:space-between; padding-right:6rem; align-items:center">
             <h3>Aneka Buah</h3>
-            <a href="">Lihat Semua</a>
+            <a href="<?php echo base_url(); ?>/category/buah">Lihat Semua</a>
         </div>
         <div class="cards " style="display: flex; justify-content:space-around">
             <?php foreach ($buah as $item) : ?>
