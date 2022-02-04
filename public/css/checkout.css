@@ -1,0 +1,274 @@
+.container1,
+.container2,
+.container3 {
+  width: 80%;
+  margin: auto;
+
+  font-family: Nunito;
+}
+
+.checkout a {
+  text-decoration: none;
+  color: black;
+  margin: 50px auto;
+}
+
+.checkout a img {
+  float: left;
+  height: 35px;
+}
+
+.checkout a div {
+  line-height: 35px;
+  font-weight: bolder;
+  font-size: x-large;
+  margin-left: 50px;
+}
+
+.container2 {
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.alamat,
+.ringkasan {
+  width: 420px;
+  margin: 20px 20px;
+}
+
+.alamat a {
+  color: rgb(76, 182, 84);
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  margin-top: -40px;
+  margin-right: 7px;
+}
+
+.detailAlamat,
+.pembayaran {
+  width: 92%;
+  margin: 10px auto;
+  padding: 5px 10px;
+  min-height: 200px;
+  border-radius: 12px;
+  border: 5px solid rgba(245, 245, 245, 0.5);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.41);
+}
+
+.pembayaran .button {
+  text-align: center;
+}
+
+.pembayaran .buttonBayar {
+  background-color: rgb(247, 209, 0);
+  border: none;
+  border-radius: 12px;
+  height: 40px;
+  width: 90%;
+  margin: 5px auto;
+  font-weight: bolder;
+  font-size: large;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+.buttonBayar:disabled{
+  background-color: rgba(247, 209, 0, 0.5);
+}
+
+.pembayaran .button {
+  text-align: center;
+  line-height: 40px;
+}
+
+.total {
+  font-weight: lighter;
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.3rem;
+}
+
+.container3 h2 {
+  margin-left: 100px;
+}
+
+.detail {
+  width: 80%;
+  margin: 5px auto;
+  padding: 3px 3px;
+  border-radius: 12px;
+  border: 5px solid rgba(245, 245, 245, 0.5);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.41);
+}
+
+.detailPesanan {
+  border: 1px solid grey;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+}
+
+.item,
+.jumlah {
+  display: flex;
+  justify-content: left;
+}
+
+.item img {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
+
+.item h3 {
+  color: grey;
+  font-weight: 500;
+  line-height: 0.3rem;
+}
+
+.item h3 span {
+  font-weight: bolder;
+  font-size: large;
+  color: black;
+}
+
+.jumlah {
+  justify-content: right;
+  align-items: center;
+}
+
+.plusminus {
+  margin: 35px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.plusminus input {
+  text-align: center;
+  padding: 5px 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.plusminus a {
+  text-decoration: none;
+}
+
+.plusminus a img {
+  width: 20px;
+  margin: auto 5px;
+}
+
+.number-input input[type="number"] {
+  -webkit-appearance: textfield !important;
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+.number-input input[type="number"]::-webkit-inner-spin-button,
+.number-input input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  margin-bottom: 20px;
+  padding-top: 20px !important;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.modal-content2 {
+  background-color: #fefefe;
+  padding: 2px;
+  border-radius: 12px;
+  border: 5px solid rgba(245, 245, 245, 0.5);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.41);
+  width: 350px;
+  height: 510px;
+  margin: 30px auto;
+}
+
+.modal-content2 h4 {
+  text-align: left;
+  padding-left: 10px;
+  line-height: 10px;
+}
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal2 {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.metode {
+  display: flex;
+  justify-content: space-between;
+  line-height: 50px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.metode img {
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.modal2 .pembayaran {
+  border: none;
+  box-shadow: none;
+  line-height: 0px;
+}
+
+.lanjutkan {
+  float: right;
+}
+
+.lanjutkan button {
+  width: 200px;
+  background-color: rgb(247, 209, 0);
+  border-radius: 12px;
+  border: none;
+}

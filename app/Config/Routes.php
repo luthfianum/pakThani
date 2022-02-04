@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('HomeController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -33,16 +33,32 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 //GET WOI
-$routes->get('/', 'Home::index');
+$routes->get('/', 'HomeController::index');
 $routes->get('/category/(:any)', 'CategoryController::index/$1');
+$routes->get('/verify/(:any)', 'SignupController::verification/$1');
+$routes->get('/test', 'PasswordController::send');
 $routes->get('/login', 'SigninController::index');
+$routes->get('/login_password=forgot', 'PasswordController::index');
+$routes->get('/edit_password/(:any)', 'PasswordController::showEditPasswordPage/$1');
 $routes->get('/signup', 'SignupController::index');
-$routes->get('/logout', '');
-$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
+$routes->get('/logout', 'SigninController::out');
+$routes->get('/profile', 'ProfileController::index', ['filter' => 'authGuard']);
+$routes->get('/item/(:any)', 'DetailitemController::index/$1');
+$routes->get('/checkout', 'TransactionController::checkoutPage');
+$routes->get('/transaction', 'TransactionController::listTransactionPage');
+$routes->get('/verification', 'VerificationController::index');
+$routes->get('/verificationSucceed', 'VerificationController::succeed');
+$routes->get('search/(:any)', 'SearchController::index/$1');
 
 //INI POST YAAA!
+$routes->post('/login_password=forgot', 'PasswordController::send');
+$routes->post('/edit=success/(:any)', 'PasswordController::editPassword/$1');
 $routes->post('/login', 'SigninController::loginAuth');
 $routes->post('/signup', 'SignupController::store');
+$routes->post('/cart', 'CartController::index');
+$routes->post('/address/(:any)', 'AddressController::updateActive/$1');
+$routes->post('/address', 'AddressController::addAddress');
+$routes->post('/checkout', 'TransactionController::checkout');
 
 /*
  * --------------------------------------------------------------------

@@ -1,0 +1,133 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.back a {
+  text-decoration: none;
+  color: black;
+  margin: 50px auto;
+}
+
+.back a img {
+  float: left;
+  height: 35px;
+}
+
+a div {
+  line-height: 35px;
+  font-weight: bolder;
+  font-size: x-large;
+  margin-left: 50px;
+}
+
+.content {
+  display: flex;
+  margin: 20px auto;
+}
+
+.image {
+  width: 551px;
+  height: 515px;
+  border-radius: 10%;
+  border: 1px solid black;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+h2 {
+  color: grey;
+  font-weight: 500;
+}
+
+h2 span {
+  font-weight: bolder;
+  font-size: xx-large;
+  color: black;
+}
+
+.detail div {
+  width: 200px;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  border: 1px solid #6c757d;
+}
+
+.number-input input[type="number"] {
+  -webkit-appearance: textfield !important;
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+.number-input input[type="number"]::-webkit-inner-spin-button,
+.number-input input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  margin-bottom: 20px;
+  padding-top: 20px !important;
+}
+
+.hover {
+  background-color: rgba(247, 209, 0, 1);
+}
+
+.option label,
+.plusminus input,
+.beli input {
+  padding: 5px 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.option label {
+  min-width: 200px;
+  margin: 1px;
+}
+
+.beli input {
+  width: 200px;
+  margin: 20px 5px;
+  background-color: rgb(247, 209, 0);
+  border-style: none;
+  border: none;
+}
+
+.option input {
+  display: none;
+}
+
+.plusminus a {
+  text-decoration: none;
+}
+
+.plusminus {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.plusminus a img {
+  width: 25px;
+  margin: 5px;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
